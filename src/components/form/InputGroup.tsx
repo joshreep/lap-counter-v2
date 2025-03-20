@@ -18,7 +18,7 @@ const InputGroup: FC<InputGroupProps> = ({ disabled, label, ref, ...props }) => 
         {label}
       </label>
       {disabled ? (
-        <div className="w-full p-4 rounded-sm bg-disabled-bg">
+        <div className="w-full p-4 rounded-sm bg-disabled-bg h-14">
           <p className="text-disabled-text" data-testid={props['data-testid']}>
             {props.value}
           </p>

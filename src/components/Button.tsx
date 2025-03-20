@@ -4,14 +4,15 @@ import classNames from 'classnames'
 type ButtonStyle = 'primary' | 'secondary' | 'error' | 'tint'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  buttonStyle: ButtonStyle
+  buttonStyle?: ButtonStyle
 }
 
-const Button: FC<ButtonProps> = ({ className, buttonStyle: style = 'primary', ...props }) => {
+const Button: FC<ButtonProps> = ({ className, buttonStyle = 'primary', ...props }) => {
   return (
     <button
       className={classNames(
-        `py-3 px-5 rounded-lg border-none bg-${style} text-white active:bg-blend-darken`,
+        `py-3 px-5 rounded-lg border-none text-white active:bg-blend-darken`,
+        { [`bg-${buttonStyle}`]: buttonStyle },
         className,
       )}
       {...props}

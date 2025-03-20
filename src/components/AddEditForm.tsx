@@ -1,29 +1,30 @@
+'use client'
+
 import { DBService } from '@/database/db-service'
 import { InputRunnerRow } from '@/database/types'
+import { useRouter } from 'next/navigation'
 import { FC, useCallback, useRef, useState } from 'react'
-import { Container, InputContainer } from './AddEditForm.style'
+import Button from './Button'
+import ButtonGroup from './ButtonGroup'
 import SubmitAnimation, { SubmissionState } from './SubmitAnimation'
 import InputGroup from './form/InputGroup'
-import { ButtonGroup } from './Button'
-import { useParams } from 'next/navigation'
-import { useRouter } from 'next/router'
 
 export interface AddEditFormProps {
   mode: 'add' | 'edit'
+  params?: Record<string, string | undefined>
 }
 
 const AddEditForm: FC<AddEditFormProps> = (props) => {
-  const { mode } = props
+  const { mode, params } = props
   const nameInputRef = useRef<HTMLInputElement>(null)
   const runnerNumberInputRef = useRef<HTMLInputElement>(null)
   const lapCountInputRef = useRef<HTMLInputElement>(null)
 
-  const params = useParams<{ name?: string; runnerId?: string; lapCount?: string }>()
   const router = useRouter()
 
-  const [runnerName, setRunnerName] = useState(params.name ?? '')
-  const [runnerNumber, setRunnerNumber] = useState(params.runnerId ?? '')
-  const [lapCount, setLapCount] = useState(params.lapCount ? +params.lapCount : 0)
+  const [runnerName, setRunnerName] = useState(params?.name ?? '')
+  const [runnerNumber, setRunnerNumber] = useState(params?.runnerId ?? '')
+  const [lapCount, setLapCount] = useState(params?.lapCount ? +params.lapCount : 0)
   const [submissionState, setSubmissionState] = useState(SubmissionState.Idle)
 
   const showLapCount = mode === 'edit'
@@ -55,14 +56,13 @@ const AddEditForm: FC<AddEditFormProps> = (props) => {
     setSubmissionState(SubmissionState.Pending)
 
     try {
-      if (params.runnerId) await DBService.deleteRunner(params.runnerId)
+      if (params?.runnerId) await DBService.deleteRunner(params.runnerId)
       setSubmissionState(SubmissionState.Complete)
-      router.back()
     } catch (error) {
       console.error(error)
       setSubmissionState(SubmissionState.Error)
     }
-  }, [params.runnerId, router, showLapCount])
+  }, [params?.runnerId, showLapCount])
 
   const confirmDelete = useCallback(() => {
     if (
@@ -79,63 +79,71 @@ const AddEditForm: FC<AddEditFormProps> = (props) => {
     if (mode === 'add') {
       setRunnerName('')
       setRunnerNumber('')
-      nameInputRef.current?.focus()
+      runnerNumberInputRef.current?.focus()
     } else {
       router.back()
     }
   }, [mode, router])
 
   return (
-    <Container>
-      <InputContainer>
+    <div className="flex flex-col flex-1 items-center justify-start pt-10 pb-5 px-5">
+      <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-5 w-full">
         <InputGroup
+          data-testid="runnerIdInput"
           disabled={mode === 'edit'}
-          type="number"
+          enterKeyHint="next"
+          id="runnerId"
           label="Runner Number"
+          min={0}
           onChange={(e) => setRunnerNumber(e.target.value)}
-          onSubmitEditing={() => nameInputRef.current?.focus()}
+          onBlur={() => nameInputRef.current?.focus()}
+          pattern="\d*"
           ref={runnerNumberInputRef}
-          returnKeyType="done"
-          testID="runnerIdInput"
+          type="number"
           value={runnerNumber}
         />
         <InputGroup
           autoCapitalize="words"
+          data-testid="runnerNameInput"
+          enterKeyHint="next"
+          id="name"
           label="Name"
-          onChangeText={setRunnerName}
-          onSubmitEditing={() => (mode === 'add' ? onSubmit() : lapCountInputRef.current?.focus())}
+          onChange={(e) => setRunnerName(e.target.value)}
+          onBlur={() => showLapCount && lapCountInputRef.current?.focus()}
           ref={nameInputRef}
-          returnKeyType="next"
-          testID="runnerNameInput"
-          textContentType="name"
           value={runnerName}
         />
         {showLapCount && (
           <InputGroup
-            keyboardType="number-pad"
+            data-testid="lapCountInput"
+            enterKeyHint="done"
+            id="lapCount"
             label="Lap Count"
-            onChangeText={(text) => setLapCount(+text)}
-            onSubmitEditing={() => onSubmit()}
+            min={0}
+            onChange={(e) => setLapCount(+e.target.value)}
+            pattern="\d*"
             ref={lapCountInputRef}
-            returnKeyType="done"
-            testID="lapCountInput"
+            type="number"
             value={lapCount.toString()}
           />
         )}
-        <ButtonGroup>
-          {mode === 'edit' && <Button title="Delete" onPress={confirmDelete} color="red" />}
-          <Button title="Submit" onPress={onSubmit} />
+        <ButtonGroup className="flex-row-reverse">
+          <Button onClick={onSubmit} className="bg-primary text-white">
+            Submit
+          </Button>
+          {mode === 'edit' && (
+            <Button onClick={confirmDelete} buttonStyle="error">
+              Delete
+            </Button>
+          )}
         </ButtonGroup>
-      </InputContainer>
+      </form>
 
       <SubmitAnimation
         submissionState={submissionState}
         onAnimationFinish={onCheckAnimationFinish}
       />
-
-      {/* Use a light status bar on iOS to account for the black space above the modal */}
-      <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
-    </Container>
+    </div>
   )
 }
 

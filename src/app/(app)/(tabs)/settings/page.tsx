@@ -8,7 +8,7 @@ export default function SettingsPage() {
 
   return (
     <div>
-      <button type="button" className="bg-error text-text py-3 px-6 rounded-lg" onClick={signOut}>
+      <button type="button" className="bg-error text-white py-3 px-6 rounded-lg" onClick={signOut}>
         Sign Out
       </button>
     </div>

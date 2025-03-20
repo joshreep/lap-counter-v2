@@ -1,5 +1,4 @@
 import GlobalContext from '@/context/GlobalContext'
-import StyledComponentsRegistry from '@/lib/registry'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Space_Mono } from 'next/font/google'
 import { FC, PropsWithChildren } from 'react'
@@ -30,9 +29,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}, ${spaceMono.variable}`}>
-        <GlobalContext>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-        </GlobalContext>
+        <GlobalContext>{children}</GlobalContext>
       </body>
     </html>
   )

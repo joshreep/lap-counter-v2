@@ -1,5 +1,4 @@
 import { RunnerRow } from '@/database/types'
-import { Cell, Row } from './RunnerRowListItem.style'
 import { FC } from 'react'
 import Link from 'next/link'
 
@@ -9,20 +8,22 @@ type RunnerRowListItemProps = {
 
 const RunnerRowListItem: FC<RunnerRowListItemProps> = ({ item }) => {
   return (
-    <Link
-      href={{
-        pathname: '/edit-modal',
-        query: { runnerId: item.runnerId, name: item.name ?? '', lapCount: item.lapCount },
-      }}
-    >
-      <Row>
-        <Cell>{item.runnerId}</Cell>
-        <Cell $greedy>{item.name}</Cell>
-        <Cell>
-          {item.lapCount} lap{item.lapCount !== 1 && 's'}
-        </Cell>
-      </Row>
-    </Link>
+    <li>
+      <Link
+        href={{
+          pathname: '/edit',
+          query: { runnerId: item.runnerId, name: item.name ?? '', lapCount: item.lapCount },
+        }}
+      >
+        <div className="flex flex-row w-full justify-between mt-2.5 bg-bg rounded-sm">
+          <span className="py-2.5 px-5 grow-0">{item.runnerId}</span>
+          <span className="py-2.5 px-5 grow-1">{item.name}</span>
+          <span className="py-2.5 px-5 grow-0">
+            {item.lapCount} lap{item.lapCount !== 1 && 's'}
+          </span>
+        </div>
+      </Link>
+    </li>
   )
 }
 

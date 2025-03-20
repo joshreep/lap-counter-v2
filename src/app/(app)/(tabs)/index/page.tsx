@@ -47,18 +47,19 @@ const IndexPage: FC = () => {
         Runner Number
       </label>
       <input
-        id="runner-number"
-        type="number"
         className="bg-input-bg border-border text-5xl w-full p-6 rounded-lg text-center"
-        min={0}
-        enterKeyHint="done"
-        pattern="\d*"
-        onBlur={handleSubmit}
-        onFocus={handleFocus}
-        value={value}
-        ref={inputRef}
-        onChange={(event) => setValue(event.target.value)}
         disabled={[SubmissionState.Complete, SubmissionState.Pending].includes(submissionState)}
+        enterKeyHint="done"
+        id="runner-number"
+        inputMode="numeric"
+        min={0}
+        onBlur={handleSubmit}
+        onChange={(event) => setValue(event.target.value)}
+        onFocus={handleFocus}
+        pattern="\d*"
+        ref={inputRef}
+        type="number"
+        value={value}
       />
       {submissionState === SubmissionState.Error && (
         <p className="text-error text-center">{error}</p>

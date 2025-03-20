@@ -1,8 +1,8 @@
 'use client'
 
+import LoadingAnimation from '@/components/LoadingAnimation'
+import RunnerRowListItem from '@/components/RunnerRowListItem'
 import { QueryStatus, useRunners } from '@/database/db-service'
-import { faSpinner } from '@fortawesome/free-solid-svg-icons/faSpinner'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import usePrevious from '@joshreep/captain-hooks/dist/usePrevious'
 import React, { FC } from 'react'
 
@@ -13,10 +13,14 @@ const ListPage: FC = () => {
   const isLoading = !previousStatus && status === QueryStatus.Loading
 
   return (
-    <>
-      {isLoading && <FontAwesomeIcon icon={faSpinner} className="fa-2xl fa-spin" />}
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </>
+    <div className="flex flex-col items-center">
+      {isLoading && <LoadingAnimation className="w-30 h-30" />}
+      <ul className="flex flex-col gap-2 list-none">
+        {data.map((runner) => (
+          <RunnerRowListItem key={runner.runnerId} item={runner} />
+        ))}
+      </ul>
+    </div>
   )
 }
 
