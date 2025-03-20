@@ -127,7 +127,7 @@ function useAuth() {
         break
       }
       case AuthStatus.Authenticated: {
-        router.push('/home')
+        router.push('/index')
         break
       }
       default: {

@@ -1,9 +1,9 @@
+import GlobalContext from '@/context/GlobalContext'
+import StyledComponentsRegistry from '@/lib/registry'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Space_Mono } from 'next/font/google'
-import './globals.css'
-import StyledComponentsRegistry from '@/lib/registry'
-import GlobalContext from '@/context/GlobalContext'
 import { FC, PropsWithChildren } from 'react'
+import './globals.css'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

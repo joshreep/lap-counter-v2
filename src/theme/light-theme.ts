@@ -11,9 +11,10 @@ const LightTheme: DefaultTheme = {
     inputBackground: 'rgba(0, 0, 0, .07)',
     notification: 'rgb(255, 59, 48)',
     primary: 'rgb(0, 122, 255)',
-    secondary: 'rgb(52, 199, 89)',
     rootBackground: 'rgb(255, 255, 255)',
+    secondary: 'rgb(52, 199, 89)',
     text: '#111',
+    tint: 'rgb(255, 137, 137)',
   },
   dark: false,
 }

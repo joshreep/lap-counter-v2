@@ -1,5 +1,5 @@
 import { FC, InputHTMLAttributes, Ref } from 'react'
-import { DisabledInput, DisabledInputText, Group, Input, Label } from './InputGroup.style'
+import classNames from 'classnames'
 
 interface InputGroupProps extends InputHTMLAttributes<HTMLInputElement> {
   id: string
@@ -10,18 +10,23 @@ interface InputGroupProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const InputGroup: FC<InputGroupProps> = ({ disabled, label, ref, ...props }) => {
   return (
-    <Group>
-      <Label htmlFor={props.id} disabled={disabled}>
+    <div className="flex flex-col gap-1">
+      <label
+        htmlFor={props.id}
+        className={classNames('p-0  ml-1.5', { 'text-disabled-text': disabled })}
+      >
         {label}
-      </Label>
+      </label>
       {disabled ? (
-        <DisabledInput>
-          <DisabledInputText data-testid={props['data-testid']}>{props.value}</DisabledInputText>
-        </DisabledInput>
+        <div className="w-full p-4 rounded-sm bg-disabled-bg">
+          <p className="text-disabled-text" data-testid={props['data-testid']}>
+            {props.value}
+          </p>
+        </div>
       ) : (
-        <Input {...props} ref={ref} />
+        <input className={'w-full p-4 border-solid bg-input-bg rounded-md'} {...props} ref={ref} />
       )}
-    </Group>
+    </div>
   )
 }
 

@@ -1,8 +1,7 @@
-import checkAnimation from '@/animations/check-animation.json'
-import loadingAnimation from '@/animations/loading-animation.json'
 import { LottieComponentProps } from 'lottie-react'
 import { FC, useCallback } from 'react'
-import { CheckAnimation, LoadingAnimation } from './styles'
+import LoadingAnimation from './LoadingAnimation'
+import CheckAnimation from './CheckAnimation'
 
 export enum SubmissionState {
   Idle,
@@ -11,7 +10,7 @@ export enum SubmissionState {
   Error,
 }
 
-interface SubmitAnimationProps extends Omit<LottieComponentProps, 'source'> {
+interface SubmitAnimationProps extends Omit<LottieComponentProps, 'animationData'> {
   submissionState: SubmissionState
   onAnimationFinish: NonNullable<LottieComponentProps['onComplete']>
 }
@@ -24,11 +23,10 @@ const SubmitAnimation: FC<SubmitAnimationProps> = (props) => {
     }, 150)
   }, [onAnimationFinish])
 
-  if (submissionState === SubmissionState.Pending)
-    return <LoadingAnimation animationData={loadingAnimation} />
+  if (submissionState === SubmissionState.Pending) return <LoadingAnimation />
 
   if (submissionState === SubmissionState.Complete)
-    return <CheckAnimation animationData={checkAnimation} onComplete={onCheckAnimationFinished} />
+    return <CheckAnimation onComplete={onCheckAnimationFinished} />
 
   return null
 }

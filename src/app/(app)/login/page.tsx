@@ -1,13 +1,12 @@
 'use client'
 
-import loadingAnimation from '@/animations/loading-animation.json'
 import { AuthContext, AuthStatus } from '@/authentication/auth'
+import Button from '@/components/Button'
+import ButtonGroup from '@/components/ButtonGroup'
 import InputGroup from '@/components/form/InputGroup'
-import { Button, ButtonGroup, LoadingAnimation } from '@/components/styles'
-import { Text, View } from '@/components/Themed'
+import LoadingAnimation from '@/components/LoadingAnimation'
 import { FirebaseError } from 'firebase/app'
-import { FC, useCallback, useContext, useRef, useState } from 'react'
-import styled from 'styled-components'
+import { FC, FormEventHandler, useCallback, useContext, useRef, useState } from 'react'
 
 const LoginPage: FC = () => {
   const emailRef = useRef<HTMLInputElement>(null)
@@ -24,18 +23,19 @@ const LoginPage: FC = () => {
     setCustomFormError('')
   }, [])
 
-  const onSubmit = useCallback(
-    (email: string, password: string) => {
+  const onSubmit: FormEventHandler = useCallback(
+    (event) => {
+      event.preventDefault()
       setErrorDirty(false)
       signIn(email, password)
     },
-    [signIn],
+    [email, password, signIn],
   )
 
   return (
-    <Container>
-      <InputContainer>
-        <Title>Sign In with Email and Password</Title>
+    <form className="flex justify-center items-center p-5 h-full" onSubmit={onSubmit}>
+      <div className="flex flex-col gap-5 w-full">
+        <h1 className="text-center text-xl">Sign In with Email and Password</h1>
         <InputGroup
           autoCapitalize="false"
           autoComplete="email"
@@ -68,20 +68,20 @@ const LoginPage: FC = () => {
           tabIndex={0}
         />
         {authStatus === AuthStatus.Error && !errorDirty && (
-          <ErrorText>{getErrorText(error, email)}</ErrorText>
+          <p className="text-center text-error text-sm">{getErrorText(error, email)}</p>
         )}
-        {customFormError && <ErrorText>{customFormError}</ErrorText>}
+        {customFormError && <p className="text-center text-error text-sm">{customFormError}</p>}
         <ButtonGroup>
-          <Button type="button" $style="secondary" onClick={() => resetPassword(email)}>
+          <Button type="button" buttonStyle="secondary" onClick={() => resetPassword(email)}>
             Forgot Password
           </Button>
-          <Button type="submit" $style="primary" onClick={() => onSubmit(email, password)}>
+          <Button type="submit" buttonStyle="primary" tabIndex={0}>
             Sign In
           </Button>
         </ButtonGroup>
-      </InputContainer>
-      {authStatus === AuthStatus.Pending && <LoadingAnimation animationData={loadingAnimation} />}
-    </Container>
+      </div>
+      {authStatus === AuthStatus.Pending && <LoadingAnimation />}
+    </form>
   )
 }
 
@@ -109,29 +109,3 @@ function getErrorText(error: unknown, email: string): string {
 
   return 'Something went wrong trying to log in.  Please try again.'
 }
-
-const Container = styled(View).attrs({ $rootBackground: true })`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.25rem;
-  height: 100%;
-`
-
-const InputContainer = styled(View)`
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  width: 100%;
-  background-color: transparent;
-`
-const Title = styled(Text('h1'))`
-  text-align: center;
-  font-size: 1.25rem;
-`
-
-const ErrorText = styled('p')`
-  color: ${({ theme }) => theme.colors.error};
-  text-align: center;
-  font-size: 0.875rem;
-`

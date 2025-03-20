@@ -12,9 +12,10 @@ declare module 'styled-components' {
       inputBackground: string
       notification: string
       primary: string
-      secondary: string
       rootBackground: string
+      secondary: string
       text: string
+      tint: string
     }
     dark: boolean
   }

@@ -4,7 +4,7 @@ import { FC, useCallback, useRef, useState } from 'react'
 import { Container, InputContainer } from './AddEditForm.style'
 import SubmitAnimation, { SubmissionState } from './SubmitAnimation'
 import InputGroup from './form/InputGroup'
-import { ButtonGroup } from './styles'
+import { ButtonGroup } from './Button'
 import { useParams } from 'next/navigation'
 import { useRouter } from 'next/router'
 
