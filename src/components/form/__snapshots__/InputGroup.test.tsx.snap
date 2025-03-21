@@ -1,205 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`dark theme should match snapshot 1`] = `
-<View
-  style={
-    {
-      "backgroundColor": "transparent",
-      "gap": 4,
-    }
-  }
+<div
+  class="flex flex-col gap-1"
 >
-  <Text
-    style={
-      {
-        "color": "rgb(255, 255, 255)",
-        "fontSize": 16,
-        "marginLeft": 5,
-        "paddingBottom": 0,
-        "paddingLeft": 0,
-        "paddingRight": 0,
-        "paddingTop": 0,
-      }
-    }
+  <label
+    class="p-0  ml-1.5"
+    for="name"
   >
-    name
-  </Text>
-  <TextInput
-    clearButtonMode="while-editing"
-    style={
-      {
-        "backgroundColor": "rgba(255,255,255, .1)",
-        "borderBottomLeftRadius": 4,
-        "borderBottomRightRadius": 4,
-        "borderTopLeftRadius": 4,
-        "borderTopRightRadius": 4,
-        "color": "rgb(255, 255, 255)",
-        "fontSize": 16,
-        "paddingBottom": 15,
-        "paddingLeft": 15,
-        "paddingRight": 15,
-        "paddingTop": 15,
-        "width": "100%",
-      }
-    }
+    Name
+  </label>
+  <input
+    class="w-full p-4 border-solid bg-input-bg rounded-md"
+    id="name"
     value="George Washington"
   />
-</View>
+</div>
 `;
 
 exports[`dark theme should match snapshot when disabled 1`] = `
-<View
-  style={
-    {
-      "backgroundColor": "transparent",
-      "gap": 4,
-    }
-  }
+<div
+  class="flex flex-col gap-1"
 >
-  <Text
-    disabled={true}
-    style={
-      {
-        "color": "rgb(127, 127, 127)",
-        "fontSize": 16,
-        "marginLeft": 5,
-        "paddingBottom": 0,
-        "paddingLeft": 0,
-        "paddingRight": 0,
-        "paddingTop": 0,
-      }
-    }
+  <label
+    class="p-0  ml-1.5 text-disabled-text"
+    for="birthday"
   >
-    birthday
-  </Text>
-  <View
-    style={
-      {
-        "backgroundColor": "rgba(255, 255, 255, .05)",
-        "borderBottomLeftRadius": 4,
-        "borderBottomRightRadius": 4,
-        "borderTopLeftRadius": 4,
-        "borderTopRightRadius": 4,
-        "paddingBottom": 15,
-        "paddingLeft": 15,
-        "paddingRight": 15,
-        "paddingTop": 15,
-        "width": "100%",
-      }
-    }
-  >
-    <Text
-      style={
-        {
-          "color": "rgb(127, 127, 127)",
-          "fontSize": 16,
-        }
-      }
-    >
-      7/4/1776
-    </Text>
-  </View>
-</View>
+    Birthday
+  </label>
+  <input
+    class="w-full p-4 border-solid bg-input-bg rounded-md"
+    disabled=""
+    id="birthday"
+    value="7/4/1776"
+  />
+</div>
 `;
 
 exports[`light theme should match snapshot 1`] = `
-<View
-  style={
-    {
-      "backgroundColor": "transparent",
-      "gap": 4,
-    }
-  }
+<div
+  class="flex flex-col gap-1"
 >
-  <Text
-    style={
-      {
-        "color": "#111",
-        "fontSize": 16,
-        "marginLeft": 5,
-        "paddingBottom": 0,
-        "paddingLeft": 0,
-        "paddingRight": 0,
-        "paddingTop": 0,
-      }
-    }
+  <label
+    class="p-0  ml-1.5"
+    for="name"
   >
-    name
-  </Text>
-  <TextInput
-    clearButtonMode="while-editing"
-    style={
-      {
-        "backgroundColor": "rgba(0, 0, 0, .07)",
-        "borderBottomLeftRadius": 4,
-        "borderBottomRightRadius": 4,
-        "borderTopLeftRadius": 4,
-        "borderTopRightRadius": 4,
-        "color": "#111",
-        "fontSize": 16,
-        "paddingBottom": 15,
-        "paddingLeft": 15,
-        "paddingRight": 15,
-        "paddingTop": 15,
-        "width": "100%",
-      }
-    }
+    Name
+  </label>
+  <input
+    class="w-full p-4 border-solid bg-input-bg rounded-md"
+    id="name"
     value="George Washington"
   />
-</View>
+</div>
 `;
 
 exports[`light theme should match snapshot when disabled 1`] = `
-<View
-  style={
-    {
-      "backgroundColor": "transparent",
-      "gap": 4,
-    }
-  }
+<div
+  class="flex flex-col gap-1"
 >
-  <Text
-    disabled={true}
-    style={
-      {
-        "color": "rgb(127, 127, 127)",
-        "fontSize": 16,
-        "marginLeft": 5,
-        "paddingBottom": 0,
-        "paddingLeft": 0,
-        "paddingRight": 0,
-        "paddingTop": 0,
-      }
-    }
+  <label
+    class="p-0  ml-1.5 text-disabled-text"
+    for="birthday"
   >
-    birthday
-  </Text>
-  <View
-    style={
-      {
-        "backgroundColor": "rgba(0, 0, 0, .035)",
-        "borderBottomLeftRadius": 4,
-        "borderBottomRightRadius": 4,
-        "borderTopLeftRadius": 4,
-        "borderTopRightRadius": 4,
-        "paddingBottom": 15,
-        "paddingLeft": 15,
-        "paddingRight": 15,
-        "paddingTop": 15,
-        "width": "100%",
-      }
-    }
-  >
-    <Text
-      style={
-        {
-          "color": "rgb(127, 127, 127)",
-          "fontSize": 16,
-        }
-      }
-    >
-      7/4/1776
-    </Text>
-  </View>
-</View>
+    Birthday
+  </label>
+  <input
+    class="w-full p-4 border-solid bg-input-bg rounded-md"
+    disabled=""
+    id="birthday"
+    value="7/4/1776"
+  />
+</div>
 `;

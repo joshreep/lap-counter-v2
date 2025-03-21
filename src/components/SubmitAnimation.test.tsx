@@ -1,50 +1,51 @@
 import { forEachTheme } from '@/test-utils/ThemeWrapper'
-import { render } from '@testing-library/react-native'
+import { render } from '@testing-library/react'
 import SubmitAnimation, { SubmissionState } from './SubmitAnimation'
-import { FC, PropsWithChildren } from 'react'
 
 type SetupProps = {
   submissionState: SubmissionState
-  wrapper: FC<PropsWithChildren>
 }
 
-function setup({ submissionState, wrapper }: SetupProps) {
+function setup({ submissionState }: SetupProps) {
   jest.useFakeTimers()
   const onAnimationFinishMock = jest.fn()
   const container = render(
     <SubmitAnimation submissionState={submissionState} onAnimationFinish={onAnimationFinishMock} />,
-    { wrapper },
   )
 
   return { ...container, onAnimationFinishMock }
 }
 
-forEachTheme((theme, wrapper) => {
+forEachTheme((theme) => {
   describe(`${theme} theme`, () => {
     test('should render null when submissionState is Idle', () => {
-      const container = setup({ submissionState: SubmissionState.Idle, wrapper })
-      expect(container.onAnimationFinishMock).not.toHaveBeenCalled()
-      expect(container.toJSON()).toBeNull()
+      const { container, onAnimationFinishMock } = setup({ submissionState: SubmissionState.Idle })
+      expect(onAnimationFinishMock).not.toHaveBeenCalled()
+      expect(container.firstChild).toBeNull()
     })
 
     test('should render null when submissionState is Error', () => {
-      const container = setup({ submissionState: SubmissionState.Error, wrapper })
-      expect(container.onAnimationFinishMock).not.toHaveBeenCalled()
-      expect(container.toJSON()).toBeNull()
+      const { container, onAnimationFinishMock } = setup({ submissionState: SubmissionState.Error })
+      expect(onAnimationFinishMock).not.toHaveBeenCalled()
+      expect(container.firstChild).toBeNull()
     })
 
     test('should render LoadingAnimation when submissionState is Pending', () => {
-      const container = setup({ submissionState: SubmissionState.Pending, wrapper })
-      expect(container.onAnimationFinishMock).not.toHaveBeenCalled()
-      expect(container.toJSON()).toMatchSnapshot()
+      const { container, onAnimationFinishMock } = setup({
+        submissionState: SubmissionState.Pending,
+      })
+      expect(onAnimationFinishMock).not.toHaveBeenCalled()
+      expect(container.firstChild).toMatchSnapshot()
     })
 
     test('should render CheckAnimation when submissionState is Complete', () => {
-      jest.mock('lottie-react-native')
-      const container = setup({ submissionState: SubmissionState.Complete, wrapper })
-      expect(container.toJSON()).toMatchSnapshot()
+      jest.mock('lottie-react')
+      const { container, onAnimationFinishMock } = setup({
+        submissionState: SubmissionState.Complete,
+      })
+      expect(container.firstChild).toMatchSnapshot()
       jest.runAllTimers()
-      expect(container.onAnimationFinishMock).toHaveBeenCalled()
+      expect(onAnimationFinishMock).toHaveBeenCalled()
     })
   })
 })

@@ -8,24 +8,16 @@ interface InputGroupProps extends InputHTMLAttributes<HTMLInputElement> {
   'data-testid'?: string
 }
 
-const InputGroup: FC<InputGroupProps> = ({ disabled, label, ref, ...props }) => {
+const InputGroup: FC<InputGroupProps> = ({ label, ref, ...props }) => {
   return (
     <div className="flex flex-col gap-1">
       <label
         htmlFor={props.id}
-        className={classNames('p-0  ml-1.5', { 'text-disabled-text': disabled })}
+        className={classNames('p-0  ml-1.5', { 'text-disabled-text': props.disabled })}
       >
         {label}
       </label>
-      {disabled ? (
-        <div className="w-full p-4 rounded-sm bg-disabled-bg h-14">
-          <p className="text-disabled-text" data-testid={props['data-testid']}>
-            {props.value}
-          </p>
-        </div>
-      ) : (
-        <input className={'w-full p-4 border-solid bg-input-bg rounded-md'} {...props} ref={ref} />
-      )}
+      <input className={'w-full p-4 border-solid bg-input-bg rounded-md'} {...props} ref={ref} />
     </div>
   )
 }

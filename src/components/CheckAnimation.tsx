@@ -9,7 +9,7 @@ const CheckAnimation: FC<CheckAnimationProps> = ({ className, ...props }) => {
   return (
     <Lottie
       animationData={animation}
-      autoPlay
+      autoPlay={true}
       className={classNames('w-3xs h-3xs', className)}
       loop={false}
       {...props}
