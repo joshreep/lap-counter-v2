@@ -5,13 +5,15 @@ import { FirebaseOptions, initializeApp } from 'firebase/app'
 
 // Your web app's Firebase configuration
 const firebaseConfig: FirebaseOptions = {
-  apiKey: 'AIzaSyDZkOJAv-tplRzv3EQ0MPMw8BtnQiq4wms',
-  authDomain: 'lap-counter-dae7a.firebaseapp.com',
-  projectId: 'lap-counter-dae7a',
-  storageBucket: 'lap-counter-dae7a.appspot.com',
-  messagingSenderId: '60886487556',
-  appId: '1:60886487556:web:2691a34b379bb2bcffdb51',
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
 }
+
+console.log(process.env.FIREBASE_API_KEY)
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)

@@ -28,8 +28,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "__mocks__/firebase/auth.ts",
-    "src/authentication/auth.test.tsx-temp"
+    "__mocks__/firebase/auth.ts"
   ],
   "exclude": ["node_modules"]
 }

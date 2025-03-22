@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest",
+    "test": "jest  --watch",
+    "test:ci": "jest --ci",
     "prepare": "husky",
     "commitlint": "commitlint --edit"
   },
@@ -51,6 +52,7 @@
     "tailwindcss": "^4.0.14",
     "ts-jest": "^29.2.6",
     "ts-node": "^10.9.2",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vercel": "^41.4.1"
   }
 }
