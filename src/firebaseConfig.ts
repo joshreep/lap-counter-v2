@@ -13,8 +13,6 @@ const firebaseConfig: FirebaseOptions = {
   storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
 }
 
-console.log(process.env.FIREBASE_API_KEY)
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
 
