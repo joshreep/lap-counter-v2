@@ -1,4 +1,4 @@
-name: Deploy to GH Pages
+name: Continuous Deployment
 
 on:
   workflow_dispatch:
@@ -7,8 +7,7 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
+  pull-requests: write
 
 concurrency:
   group: pages
@@ -27,6 +26,7 @@ jobs:
         id: release
         with:
           release-type: node
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/checkout@v4
         if: ${{ steps.release.outputs.release_created}}
