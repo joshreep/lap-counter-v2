@@ -1,18 +1,7 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 html,
 body {
-  max-width: 100vw;
+  width: 100%;
+  height: 100%;
   overflow-x: hidden;
 }
 
@@ -26,17 +15,57 @@ body {
 
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@import 'tailwindcss';
+
+@theme {
+  --color-disabled-text: rgb(127, 127, 127);
+
+  --color-bg: rgba(0, 0, 0, 0.05);
+  --color-border: rgb(39, 39, 41);
+  --color-disabled-bg: rgba(0, 0, 0, 0.035);
+  --color-error: rgb(255, 0, 4);
+  --color-input-bg: rgba(0, 0, 0, 0.07);
+  --color-notification: rgb(255, 59, 48);
+  --color-primary: rgb(0, 122, 255);
+  --color-root-bg: rgb(255, 255, 255);
+  --color-secondary: rgb(52, 199, 89);
+  --color-text: rgb(17, 17, 17);
+  --color-tint: rgb(255, 137, 137);
+}
+
+:root {
+  --background: rgb(255, 255, 255);
+  --foreground: rgb(17, 17, 17);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: rgb(17, 17, 17);
+    --foreground: rgb(255, 255, 255);
+
+    --color-bg: rgba(255, 255, 255, 0.07);
+    --color-border: rgb(216, 216, 216);
+    --color-disabled-bg: rgba(255, 255, 255, 0.05);
+    --color-error: rgb(255, 76, 79);
+    --color-input-bg: rgba(255, 255, 255, 0.1);
+    --color-notification: rgb(255, 69, 58);
+    --color-primary: rgb(10, 132, 255);
+    --color-root-bg: rgb(17, 17, 17);
+    --color-secondary: rgb(44, 209, 158);
+    --color-text: rgb(255, 255, 255);
+    --color-tint: rgb(255, 172, 172);
   }
 }

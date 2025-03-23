@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dark theme should match snapshot 1`] = `
+<div
+  class="flex flex-col gap-1"
+>
+  <label
+    class="p-0  ml-1.5"
+    for="name"
+  >
+    Name
+  </label>
+  <input
+    class="w-full p-4 border-solid bg-input-bg rounded-md"
+    id="name"
+    value="George Washington"
+  />
+</div>
+`;
+
+exports[`dark theme should match snapshot when disabled 1`] = `
+<div
+  class="flex flex-col gap-1"
+>
+  <label
+    class="p-0  ml-1.5 text-disabled-text"
+    for="birthday"
+  >
+    Birthday
+  </label>
+  <input
+    class="w-full p-4 border-solid bg-input-bg rounded-md"
+    disabled=""
+    id="birthday"
+    value="7/4/1776"
+  />
+</div>
+`;
+
+exports[`light theme should match snapshot 1`] = `
+<div
+  class="flex flex-col gap-1"
+>
+  <label
+    class="p-0  ml-1.5"
+    for="name"
+  >
+    Name
+  </label>
+  <input
+    class="w-full p-4 border-solid bg-input-bg rounded-md"
+    id="name"
+    value="George Washington"
+  />
+</div>
+`;
+
+exports[`light theme should match snapshot when disabled 1`] = `
+<div
+  class="flex flex-col gap-1"
+>
+  <label
+    class="p-0  ml-1.5 text-disabled-text"
+    for="birthday"
+  >
+    Birthday
+  </label>
+  <input
+    class="w-full p-4 border-solid bg-input-bg rounded-md"
+    disabled=""
+    id="birthday"
+    value="7/4/1776"
+  />
+</div>
+`;

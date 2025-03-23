@@ -1,0 +1,563 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dark theme should render CheckAnimation when submissionState is Complete 1`] = `
+<div
+  autoplay=""
+  class="w-3xs h-3xs"
+>
+  <svg
+    height="151"
+    preserveAspectRatio="xMidYMid meet"
+    style="width: 100%; height: 100%; transform: translate3d(0,0,0);"
+    viewBox="0 0 153 151"
+    width="153"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <defs>
+      <clippath
+        id="__lottie_element_54"
+      >
+        <rect
+          height="151"
+          width="153"
+          x="0"
+          y="0"
+        />
+      </clippath>
+      <clippath
+        id="__lottie_element_56"
+      >
+        <path
+          d="M0,0 L135,0 L135,128 L0,128z"
+        />
+      </clippath>
+    </defs>
+    <g
+      clip-path="url(#__lottie_element_54)"
+    >
+      <g
+        clip-path="url(#__lottie_element_56)"
+        opacity="0.00029343923051978793"
+        style="display: block;"
+        transform="matrix(1.1189650297164917,0,0,1.1189650297164917,0.8993638753890991,3.477238178253174)"
+      >
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path />
+            <path
+              fill-opacity="0"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+            />
+          </g>
+        </g>
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path
+              fill-rule="evenodd"
+            />
+            <path
+              fill-opacity="0"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+            />
+          </g>
+        </g>
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path
+              fill-rule="evenodd"
+            />
+            <path
+              fill-opacity="0"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+            />
+          </g>
+        </g>
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path
+              fill-rule="evenodd"
+            />
+            <path
+              fill-opacity="0"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+            />
+          </g>
+        </g>
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path
+              fill-rule="evenodd"
+            />
+            <path
+              fill-opacity="0"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+            />
+          </g>
+        </g>
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path
+              fill-rule="evenodd"
+            />
+            <path
+              fill-opacity="0"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+            />
+          </g>
+        </g>
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path
+              fill-rule="evenodd"
+            />
+            <path
+              fill-opacity="0"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+            />
+          </g>
+        </g>
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path
+              fill-rule="evenodd"
+            />
+            <path
+              fill-opacity="0"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+            />
+          </g>
+        </g>
+        <g
+          opacity="1"
+          style="display: block;"
+          transform="matrix(0.0002934392250608653,0,0,0.0002934392250608653,67.47222137451172,63.61372375488281)"
+        >
+          <g
+            opacity="1"
+            transform="matrix(1,0,0,1,-5,-4)"
+          >
+            <path
+              d=" M31,3.5 C45.62535095214844,3.5 57.5,15.374650001525879 57.5,30 C57.5,44.62535095214844 45.62535095214844,56.5 31,56.5 C16.374649047851562,56.5 4.5,44.62535095214844 4.5,30 C4.5,15.374650001525879 16.374649047851562,3.5 31,3.5z"
+              fill="rgb(35,178,109)"
+              fill-opacity="1"
+            />
+            <path
+              d=" M31,3.5 C45.62535095214844,3.5 57.5,15.374650001525879 57.5,30 C57.5,44.62535095214844 45.62535095214844,56.5 31,56.5 C16.374649047851562,56.5 4.5,44.62535095214844 4.5,30 C4.5,15.374650001525879 16.374649047851562,3.5 31,3.5z"
+              fill-opacity="0"
+              stroke="rgb(0,0,0)"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+              stroke-opacity="0"
+              stroke-width="0"
+            />
+          </g>
+        </g>
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path />
+            <path
+              fill-opacity="0"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+            />
+          </g>
+        </g>
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`dark theme should render LoadingAnimation when submissionState is Pending 1`] = `
+<div
+  autoplay=""
+  class="w-3xs h-3xs"
+>
+  <svg
+    height="300"
+    preserveAspectRatio="xMidYMid meet"
+    style="width: 100%; height: 100%; transform: translate3d(0,0,0);"
+    viewBox="0 0 300 300"
+    width="300"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <defs>
+      <clippath
+        id="__lottie_element_46"
+      >
+        <rect
+          height="300"
+          width="300"
+          x="0"
+          y="0"
+        />
+      </clippath>
+    </defs>
+    <g
+      clip-path="url(#__lottie_element_46)"
+    >
+      <g
+        opacity="0.3"
+        style="display: block;"
+        transform="matrix(0.30000001192092896,0,0,0.30000001192092896,150,150)"
+      >
+        <g
+          opacity="1"
+          transform="matrix(1,0,0,1,0,0)"
+        >
+          <path
+            d=" M0,-150 C82.78500366210938,-150 150,-82.78500366210938 150,0 C150,82.78500366210938 82.78500366210938,150 0,150 C-82.78500366210938,150 -150,82.78500366210938 -150,0 C-150,-82.78500366210938 -82.78500366210938,-150 0,-150z"
+            fill-opacity="0"
+            stroke="rgb(170,215,235)"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-miterlimit="4"
+            stroke-opacity="1"
+            stroke-width="50"
+          />
+        </g>
+      </g>
+      <g
+        opacity="1"
+        style="display: block;"
+        transform="matrix(0.30000001192092896,0.000031415926059708,-0.000031415926059708,0.30000001192092896,150,150)"
+      >
+        <g
+          opacity="1"
+          transform="matrix(1,0,0,1,0,0)"
+        >
+          <path
+            d=" M0,-150 C3.1640000343322754,-150 6.303999900817871,-149.90199279785156 9.418999671936035,-149.70799255371094"
+            fill-opacity="0"
+            stroke="rgb(58,169,220)"
+            stroke-linecap="round"
+            stroke-linejoin="miter"
+            stroke-miterlimit="4"
+            stroke-opacity="1"
+            stroke-width="50"
+          />
+        </g>
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`light theme should render CheckAnimation when submissionState is Complete 1`] = `
+<div
+  autoplay=""
+  class="w-3xs h-3xs"
+>
+  <svg
+    height="151"
+    preserveAspectRatio="xMidYMid meet"
+    style="width: 100%; height: 100%; transform: translate3d(0,0,0);"
+    viewBox="0 0 153 151"
+    width="153"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <defs>
+      <clippath
+        id="__lottie_element_10"
+      >
+        <rect
+          height="151"
+          width="153"
+          x="0"
+          y="0"
+        />
+      </clippath>
+      <clippath
+        id="__lottie_element_12"
+      >
+        <path
+          d="M0,0 L135,0 L135,128 L0,128z"
+        />
+      </clippath>
+    </defs>
+    <g
+      clip-path="url(#__lottie_element_10)"
+    >
+      <g
+        clip-path="url(#__lottie_element_12)"
+        opacity="0.00029343923051978793"
+        style="display: block;"
+        transform="matrix(1.1189650297164917,0,0,1.1189650297164917,0.8993638753890991,3.477238178253174)"
+      >
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path />
+            <path
+              fill-opacity="0"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+            />
+          </g>
+        </g>
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path
+              fill-rule="evenodd"
+            />
+            <path
+              fill-opacity="0"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+            />
+          </g>
+        </g>
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path
+              fill-rule="evenodd"
+            />
+            <path
+              fill-opacity="0"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+            />
+          </g>
+        </g>
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path
+              fill-rule="evenodd"
+            />
+            <path
+              fill-opacity="0"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+            />
+          </g>
+        </g>
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path
+              fill-rule="evenodd"
+            />
+            <path
+              fill-opacity="0"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+            />
+          </g>
+        </g>
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path
+              fill-rule="evenodd"
+            />
+            <path
+              fill-opacity="0"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+            />
+          </g>
+        </g>
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path
+              fill-rule="evenodd"
+            />
+            <path
+              fill-opacity="0"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+            />
+          </g>
+        </g>
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path
+              fill-rule="evenodd"
+            />
+            <path
+              fill-opacity="0"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+            />
+          </g>
+        </g>
+        <g
+          opacity="1"
+          style="display: block;"
+          transform="matrix(0.0002934392250608653,0,0,0.0002934392250608653,67.47222137451172,63.61372375488281)"
+        >
+          <g
+            opacity="1"
+            transform="matrix(1,0,0,1,-5,-4)"
+          >
+            <path
+              d=" M31,3.5 C45.62535095214844,3.5 57.5,15.374650001525879 57.5,30 C57.5,44.62535095214844 45.62535095214844,56.5 31,56.5 C16.374649047851562,56.5 4.5,44.62535095214844 4.5,30 C4.5,15.374650001525879 16.374649047851562,3.5 31,3.5z"
+              fill="rgb(35,178,109)"
+              fill-opacity="1"
+            />
+            <path
+              d=" M31,3.5 C45.62535095214844,3.5 57.5,15.374650001525879 57.5,30 C57.5,44.62535095214844 45.62535095214844,56.5 31,56.5 C16.374649047851562,56.5 4.5,44.62535095214844 4.5,30 C4.5,15.374650001525879 16.374649047851562,3.5 31,3.5z"
+              fill-opacity="0"
+              stroke="rgb(0,0,0)"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+              stroke-opacity="0"
+              stroke-width="0"
+            />
+          </g>
+        </g>
+        <g
+          style="display: none;"
+        >
+          <g>
+            <path />
+            <path
+              fill-opacity="0"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+              stroke-miterlimit="1"
+            />
+          </g>
+        </g>
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`light theme should render LoadingAnimation when submissionState is Pending 1`] = `
+<div
+  autoplay=""
+  class="w-3xs h-3xs"
+>
+  <svg
+    height="300"
+    preserveAspectRatio="xMidYMid meet"
+    style="width: 100%; height: 100%; transform: translate3d(0,0,0);"
+    viewBox="0 0 300 300"
+    width="300"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <defs>
+      <clippath
+        id="__lottie_element_2"
+      >
+        <rect
+          height="300"
+          width="300"
+          x="0"
+          y="0"
+        />
+      </clippath>
+    </defs>
+    <g
+      clip-path="url(#__lottie_element_2)"
+    >
+      <g
+        opacity="0.3"
+        style="display: block;"
+        transform="matrix(0.30000001192092896,0,0,0.30000001192092896,150,150)"
+      >
+        <g
+          opacity="1"
+          transform="matrix(1,0,0,1,0,0)"
+        >
+          <path
+            d=" M0,-150 C82.78500366210938,-150 150,-82.78500366210938 150,0 C150,82.78500366210938 82.78500366210938,150 0,150 C-82.78500366210938,150 -150,82.78500366210938 -150,0 C-150,-82.78500366210938 -82.78500366210938,-150 0,-150z"
+            fill-opacity="0"
+            stroke="rgb(170,215,235)"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-miterlimit="4"
+            stroke-opacity="1"
+            stroke-width="50"
+          />
+        </g>
+      </g>
+      <g
+        opacity="1"
+        style="display: block;"
+        transform="matrix(0.30000001192092896,0.000031415926059708,-0.000031415926059708,0.30000001192092896,150,150)"
+      >
+        <g
+          opacity="1"
+          transform="matrix(1,0,0,1,0,0)"
+        >
+          <path
+            d=" M0,-150 C3.1640000343322754,-150 6.303999900817871,-149.90199279785156 9.418999671936035,-149.70799255371094"
+            fill-opacity="0"
+            stroke="rgb(58,169,220)"
+            stroke-linecap="round"
+            stroke-linejoin="miter"
+            stroke-miterlimit="4"
+            stroke-opacity="1"
+            stroke-width="50"
+          />
+        </g>
+      </g>
+    </g>
+  </svg>
+</div>
+`;

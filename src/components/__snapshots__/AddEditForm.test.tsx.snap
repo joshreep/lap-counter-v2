@@ -1,0 +1,285 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dark theme add mode should match snapshot 1`] = `
+<div
+  class="flex flex-col flex-1 items-center justify-start pt-10 pb-5 px-5"
+>
+  <form
+    class="flex flex-col gap-5 w-full"
+  >
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="runnerId"
+      >
+        Runner Number
+      </label>
+      <input
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="runnerIdInput"
+        enterkeyhint="next"
+        id="runnerId"
+        min="0"
+        pattern="\\d*"
+        type="number"
+        value=""
+      />
+    </div>
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="name"
+      >
+        Name
+      </label>
+      <input
+        autocapitalize="words"
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="runnerNameInput"
+        enterkeyhint="next"
+        id="name"
+        value=""
+      />
+    </div>
+    <div
+      class="flex justify-between gap-5 flex-row-reverse"
+    >
+      <button
+        class="py-3 px-5 rounded-lg border-none text-white active:bg-blend-darken bg-primary bg-primary text-white"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`dark theme edit mode should match snapshot 1`] = `
+<div
+  class="flex flex-col flex-1 items-center justify-start pt-10 pb-5 px-5"
+>
+  <form
+    class="flex flex-col gap-5 w-full"
+  >
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5 text-disabled-text"
+        for="runnerId"
+      >
+        Runner Number
+      </label>
+      <input
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="runnerIdInput"
+        disabled=""
+        enterkeyhint="next"
+        id="runnerId"
+        min="0"
+        pattern="\\d*"
+        type="number"
+        value=""
+      />
+    </div>
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="name"
+      >
+        Name
+      </label>
+      <input
+        autocapitalize="words"
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="runnerNameInput"
+        enterkeyhint="next"
+        id="name"
+        value=""
+      />
+    </div>
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="lapCount"
+      >
+        Lap Count
+      </label>
+      <input
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="lapCountInput"
+        enterkeyhint="done"
+        id="lapCount"
+        min="0"
+        pattern="\\d*"
+        type="number"
+        value="0"
+      />
+    </div>
+    <div
+      class="flex justify-between gap-5 flex-row-reverse"
+    >
+      <button
+        class="py-3 px-5 rounded-lg border-none text-white active:bg-blend-darken bg-primary bg-primary text-white"
+      >
+        Submit
+      </button>
+      <button
+        class="py-3 px-5 rounded-lg border-none text-white active:bg-blend-darken bg-error"
+      >
+        Delete
+      </button>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`light theme add mode should match snapshot 1`] = `
+<div
+  class="flex flex-col flex-1 items-center justify-start pt-10 pb-5 px-5"
+>
+  <form
+    class="flex flex-col gap-5 w-full"
+  >
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="runnerId"
+      >
+        Runner Number
+      </label>
+      <input
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="runnerIdInput"
+        enterkeyhint="next"
+        id="runnerId"
+        min="0"
+        pattern="\\d*"
+        type="number"
+        value=""
+      />
+    </div>
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="name"
+      >
+        Name
+      </label>
+      <input
+        autocapitalize="words"
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="runnerNameInput"
+        enterkeyhint="next"
+        id="name"
+        value=""
+      />
+    </div>
+    <div
+      class="flex justify-between gap-5 flex-row-reverse"
+    >
+      <button
+        class="py-3 px-5 rounded-lg border-none text-white active:bg-blend-darken bg-primary bg-primary text-white"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`light theme edit mode should match snapshot 1`] = `
+<div
+  class="flex flex-col flex-1 items-center justify-start pt-10 pb-5 px-5"
+>
+  <form
+    class="flex flex-col gap-5 w-full"
+  >
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5 text-disabled-text"
+        for="runnerId"
+      >
+        Runner Number
+      </label>
+      <input
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="runnerIdInput"
+        disabled=""
+        enterkeyhint="next"
+        id="runnerId"
+        min="0"
+        pattern="\\d*"
+        type="number"
+        value=""
+      />
+    </div>
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="name"
+      >
+        Name
+      </label>
+      <input
+        autocapitalize="words"
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="runnerNameInput"
+        enterkeyhint="next"
+        id="name"
+        value=""
+      />
+    </div>
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="lapCount"
+      >
+        Lap Count
+      </label>
+      <input
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="lapCountInput"
+        enterkeyhint="done"
+        id="lapCount"
+        min="0"
+        pattern="\\d*"
+        type="number"
+        value="0"
+      />
+    </div>
+    <div
+      class="flex justify-between gap-5 flex-row-reverse"
+    >
+      <button
+        class="py-3 px-5 rounded-lg border-none text-white active:bg-blend-darken bg-primary bg-primary text-white"
+      >
+        Submit
+      </button>
+      <button
+        class="py-3 px-5 rounded-lg border-none text-white active:bg-blend-darken bg-error"
+      >
+        Delete
+      </button>
+    </div>
+  </form>
+</div>
+`;
