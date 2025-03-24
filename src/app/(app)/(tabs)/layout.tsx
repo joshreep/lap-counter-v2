@@ -11,7 +11,7 @@ import React, { FC, PropsWithChildren } from 'react'
 const TabsLayout: FC<PropsWithChildren> = ({ children }) => {
   const pathname = usePathname() as keyof typeof PageTitle
 
-  const showPlusButton = ['/index', '/list'].includes(pathname)
+  const showPlusButton = ['/tracker', '/list'].includes(pathname)
 
   return (
     <div className="flex flex-col justify-between h-full">
@@ -25,7 +25,7 @@ const TabsLayout: FC<PropsWithChildren> = ({ children }) => {
       </header>
       <main className="flex-1 overflow-y-auto p-4">{children}</main>
       <footer className="flex justify-around border-t-border bg-bg items-end">
-        <TabIcon icon={faPersonRunning} path="/index" />
+        <TabIcon icon={faPersonRunning} path="/tracker" />
         <TabIcon icon={faList} path="/list" />
         <TabIcon icon={faCog} path="/settings" />
       </footer>

@@ -33,7 +33,7 @@ const LoginPage: FC = () => {
   )
 
   return (
-    <form className="flex justify-center items-center p-5 h-full" onSubmit={onSubmit}>
+    <form className="flex flex-col justify-center items-center p-5 h-full" onSubmit={onSubmit}>
       <div className="flex flex-col gap-5 w-full">
         <h1 className="text-center text-xl">Sign In with Email and Password</h1>
         <InputGroup
@@ -80,7 +80,7 @@ const LoginPage: FC = () => {
           </Button>
         </ButtonGroup>
       </div>
-      {authStatus === AuthStatus.Pending && <LoadingAnimation />}
+      {[AuthStatus.Pending, AuthStatus.Authenticated].includes(authStatus!) && <LoadingAnimation />}
     </form>
   )
 }

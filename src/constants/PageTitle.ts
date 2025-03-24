@@ -1,5 +1,5 @@
 export const PageTitle = {
-  '/index': 'Tracker',
+  '/tracker': 'Tracker',
   '/list': 'Results',
   '/settings': 'Settings',
   '/add': 'Add a New Runner',

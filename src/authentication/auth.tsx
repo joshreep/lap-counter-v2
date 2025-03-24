@@ -127,7 +127,7 @@ function useAuth() {
         break
       }
       case AuthStatus.Authenticated: {
-        router.push('/index')
+        router.push('/tracker')
         break
       }
       default: {
