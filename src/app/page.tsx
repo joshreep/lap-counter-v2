@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="bg-root-bg">
       <Image
-        src="/images/splash.png"
+        src="/splash.png"
         alt="Splash Screen Image"
         height={2778}
         width={1284}

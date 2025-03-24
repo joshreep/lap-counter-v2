@@ -23,6 +23,12 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   title: 'Lap Counter',
   description: "An app for counting runner's laps in a race",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'Lap Counter',
+    startupImage: '/splash.png',
+  },
 }
 
 const RootLayout: FC<PropsWithChildren> = ({ children }) => {
