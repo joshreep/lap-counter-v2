@@ -18,7 +18,7 @@ const TabsLayout: FC<PropsWithChildren> = ({ children }) => {
       <header className="flex flex-row gap-4 p-4 items-center justify-between bg-bg">
         <h1 className="text-xl">{PageTitle[pathname]}</h1>
         {showPlusButton && (
-          <Link href="/add">
+          <Link href="/add" aria-label="Add a new participant">
             <FontAwesomeIcon icon={faPlus} size="xl" fixedWidth />
           </Link>
         )}

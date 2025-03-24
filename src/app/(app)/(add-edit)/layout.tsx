@@ -16,7 +16,7 @@ const AddEditLayout: FC<AddEditLayoutProps> = ({ children }) => {
     <div className="flex flex-col justify-between h-full">
       <header className="flex flex-row gap-4 p-4 items-center justify-between bg-bg">
         <h1 className="text-xl">{PageTitle[pathname]}</h1>
-        <button type="button" onClick={router.back}>
+        <button type="button" onClick={router.back} aria-label="close">
           <FontAwesomeIcon icon={faClose} size="xl" fixedWidth />
         </button>
       </header>

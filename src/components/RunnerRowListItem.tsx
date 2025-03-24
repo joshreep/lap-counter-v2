@@ -14,6 +14,7 @@ const RunnerRowListItem: FC<RunnerRowListItemProps> = ({ item }) => {
           pathname: '/edit',
           query: { runnerId: item.runnerId, name: item.name ?? '', lapCount: item.lapCount },
         }}
+        aria-label={`Edit ${item.name}`}
       >
         <div className="flex flex-row w-full justify-between mt-2.5 bg-bg rounded-sm">
           <span className="py-2.5 px-5 grow-0">{item.runnerId}</span>
