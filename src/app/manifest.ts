@@ -8,7 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
     start_url: '/',
     display: 'standalone',
     background_color: '#fff',
-    theme_color: '#fff',
+    theme_color: '#ff8989',
+    orientation: 'portrait',
     icons: [
       {
         src: '/images/icon-192x192.png',
@@ -21,6 +22,20 @@ export default function manifest(): MetadataRoute.Manifest {
         sizes: '512x512',
         type: 'image/png',
         purpose: 'maskable',
+      },
+    ],
+    shortcuts: [
+      {
+        name: 'New Runner',
+        short_name: 'Add',
+        description: 'Quickly add a new runner',
+        url: '/add',
+      },
+      {
+        name: 'Track a lap',
+        short_name: 'Track',
+        description: "Quickly track a runner's lap by their runner number",
+        url: '/tracker',
       },
     ],
   }

@@ -1,2 +1,2 @@
 yarn lint
-yarn test:ci
+yarn test:precommit

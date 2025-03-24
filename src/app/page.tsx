@@ -8,7 +8,7 @@ export default function Home() {
         alt="Splash Screen Image"
         height={2778}
         width={1284}
-        className="w-full h-full"
+        className="w-full"
       />
     </div>
   )
