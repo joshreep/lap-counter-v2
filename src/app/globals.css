@@ -44,6 +44,17 @@ a {
   --color-secondary: rgb(52, 199, 89);
   --color-text: rgb(17, 17, 17);
   --color-tint: rgb(255, 137, 137);
+
+  --animate-auto-scroll: auto-scroll 30s linear forwards infinite;
+
+  @keyframes auto-scroll {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-50%);
+    }
+  }
 }
 
 :root {

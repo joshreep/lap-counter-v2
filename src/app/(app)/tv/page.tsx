@@ -37,7 +37,7 @@ const TVPage: FC = () => {
 
   return (
     <div className="p-4 flex h-full justify-around items-center">
-      <RunnerList clickable={false} />
+      <RunnerList clickable={false} autoScroll />
       <div className="text-[20rem]">{remainingTime}</div>
     </div>
   )
