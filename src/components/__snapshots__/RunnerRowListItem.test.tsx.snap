@@ -1,121 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`dark theme should match snapshot 1`] = `
-<li>
-  <a
-    aria-label="Edit George Washington"
-    href="/edit?runnerId=1&name=George+Washington&lapCount=100"
-  >
-    <div
-      class="flex flex-row w-full justify-between mt-2.5 bg-bg rounded-sm"
-    >
-      <span
-        class="py-2.5 px-5 grow-0"
-      >
-        1
-      </span>
-      <span
-        class="py-2.5 px-5 grow-1"
-      >
-        George Washington
-      </span>
-      <span
-        class="py-2.5 px-5 grow-0"
-      >
-        100
-         lap
-        s
-      </span>
-    </div>
-  </a>
-</li>
+<a
+  class="bg-bg py-2.5 px-5 rounded-l-sm"
+  href="#"
+>
+  1
+</a>
 `;
 
 exports[`dark theme should render with no name prop 1`] = `
-<li>
-  <a
-    aria-label="Edit undefined"
-    href="/edit?runnerId=1&name=&lapCount=100"
-  >
-    <div
-      class="flex flex-row w-full justify-between mt-2.5 bg-bg rounded-sm"
-    >
-      <span
-        class="py-2.5 px-5 grow-0"
-      >
-        1
-      </span>
-      <span
-        class="py-2.5 px-5 grow-1"
-      />
-      <span
-        class="py-2.5 px-5 grow-0"
-      >
-        100
-         lap
-        s
-      </span>
-    </div>
-  </a>
-</li>
+<a
+  class="bg-bg py-2.5 px-5 rounded-l-sm"
+  href="#"
+>
+  1
+</a>
 `;
 
 exports[`light theme should match snapshot 1`] = `
-<li>
-  <a
-    aria-label="Edit George Washington"
-    href="/edit?runnerId=1&name=George+Washington&lapCount=100"
-  >
-    <div
-      class="flex flex-row w-full justify-between mt-2.5 bg-bg rounded-sm"
-    >
-      <span
-        class="py-2.5 px-5 grow-0"
-      >
-        1
-      </span>
-      <span
-        class="py-2.5 px-5 grow-1"
-      >
-        George Washington
-      </span>
-      <span
-        class="py-2.5 px-5 grow-0"
-      >
-        100
-         lap
-        s
-      </span>
-    </div>
-  </a>
-</li>
+<a
+  class="bg-bg py-2.5 px-5 rounded-l-sm"
+  href="#"
+>
+  1
+</a>
 `;
 
 exports[`light theme should render with no name prop 1`] = `
-<li>
-  <a
-    aria-label="Edit undefined"
-    href="/edit?runnerId=1&name=&lapCount=100"
-  >
-    <div
-      class="flex flex-row w-full justify-between mt-2.5 bg-bg rounded-sm"
-    >
-      <span
-        class="py-2.5 px-5 grow-0"
-      >
-        1
-      </span>
-      <span
-        class="py-2.5 px-5 grow-1"
-      />
-      <span
-        class="py-2.5 px-5 grow-0"
-      >
-        100
-         lap
-        s
-      </span>
-    </div>
-  </a>
-</li>
+<a
+  class="bg-bg py-2.5 px-5 rounded-l-sm"
+  href="#"
+>
+  1
+</a>
 `;

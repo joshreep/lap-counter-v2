@@ -4,4 +4,5 @@ export const PageTitle = {
   '/settings': 'Settings',
   '/add': 'Add a New Runner',
   '/edit': 'Edit Runner',
+  '/tv': 'TV View',
 }

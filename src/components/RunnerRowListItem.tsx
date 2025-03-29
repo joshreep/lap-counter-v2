@@ -1,31 +1,43 @@
 import { RunnerRow } from '@/database/types'
-import { FC } from 'react'
+import classNames from 'classnames'
 import Link from 'next/link'
+import { ComponentProps, FC, PropsWithChildren } from 'react'
 
 type RunnerRowListItemProps = {
+  clickable: boolean
   item: RunnerRow
 }
 
-const RunnerRowListItem: FC<RunnerRowListItemProps> = ({ item }) => {
+const RunnerRowListItem: FC<RunnerRowListItemProps> = ({ clickable, item }) => {
   return (
-    <li>
-      <Link
-        href={{
-          pathname: '/edit',
-          query: { runnerId: item.runnerId, name: item.name ?? '', lapCount: item.lapCount },
-        }}
-        aria-label={`Edit ${item.name}`}
-      >
-        <div className="flex flex-row w-full justify-between mt-2.5 bg-bg rounded-sm">
-          <span className="py-2.5 px-5 grow-0">{item.runnerId}</span>
-          <span className="py-2.5 px-5 grow-1">{item.name}</span>
-          <span className="py-2.5 px-5 grow-0">
-            {item.lapCount} lap{item.lapCount !== 1 && 's'}
-          </span>
-        </div>
-      </Link>
-    </li>
+    <>
+      <EditLink clickable={clickable} runner={item} className="rounded-l-sm">
+        {item.runnerId}
+      </EditLink>
+      <EditLink clickable={clickable} runner={item}>
+        {item.name}
+      </EditLink>
+      <EditLink clickable={clickable} runner={item} className="rounded-r-sm whitespace-nowrap">
+        {item.lapCount} lap{item.lapCount !== 1 && 's'}
+      </EditLink>
+    </>
   )
 }
+
+interface EditLinkProps extends PropsWithChildren<Omit<ComponentProps<typeof Link>, 'href'>> {
+  clickable: boolean
+  runner: RunnerRow
+}
+
+const EditLink: FC<EditLinkProps> = ({ children, className, clickable, runner, ...props }) => (
+  <Link
+    {...props}
+    className={classNames('bg-bg py-2.5 px-5', className)}
+    href={clickable ? { pathname: '/edit', query: { ...runner } } : '#'}
+    scroll={clickable ? true : false}
+  >
+    {children}
+  </Link>
+)
 
 export default RunnerRowListItem
