@@ -1,14 +1,15 @@
-import { FC, InputHTMLAttributes, Ref } from 'react'
+import { FC, HTMLAttributes, InputHTMLAttributes, Ref } from 'react'
 import classNames from 'classnames'
 
 interface InputGroupProps extends InputHTMLAttributes<HTMLInputElement> {
   id: string
   label: string
   ref?: Ref<HTMLInputElement>
+  inputClassName?: HTMLAttributes<HTMLInputElement>['className']
   'data-testid'?: string
 }
 
-const InputGroup: FC<InputGroupProps> = ({ label, ref, ...props }) => {
+const InputGroup: FC<InputGroupProps> = ({ inputClassName, label, ref, ...props }) => {
   return (
     <div className="flex flex-col gap-1">
       <label
@@ -17,7 +18,11 @@ const InputGroup: FC<InputGroupProps> = ({ label, ref, ...props }) => {
       >
         {label}
       </label>
-      <input className={'w-full p-4 border-solid bg-input-bg rounded-md'} {...props} ref={ref} />
+      <input
+        {...props}
+        className={classNames('w-full p-4 border-solid bg-input-bg rounded-md', inputClassName)}
+        ref={ref}
+      />
     </div>
   )
 }

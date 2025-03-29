@@ -2,6 +2,7 @@ import {
   collection,
   deleteDoc,
   doc,
+  DocumentReference,
   getDocs,
   getFirestore,
   increment,
@@ -10,7 +11,7 @@ import {
   query,
   setDoc,
 } from 'firebase/firestore'
-import { InputRunnerRow, RunnerRow } from './types'
+import { CountDownTimer, InputRunnerRow, RunnerRow } from './types'
 import app from '@/firebaseConfig'
 import { useCallback, useEffect, useState } from 'react'
 
@@ -22,11 +23,13 @@ export enum QueryStatus {
 
 class DBServiceSingleton {
   private _db: ReturnType<typeof getFirestore>
+  private _countDownsRef: DocumentReference
   private _runnersCollectionRef: ReturnType<typeof collection>
   private _runnersListQuery: ReturnType<typeof query>
 
   constructor() {
     this._db = getFirestore(app)
+    this._countDownsRef = doc(this._db, 'countDowns', '1')
     this._runnersCollectionRef = collection(this._db, 'runners')
     this._runnersListQuery = query(this._runnersCollectionRef, orderBy('lapCount', 'desc'))
   }
@@ -41,6 +44,10 @@ class DBServiceSingleton {
 
   get runnersListQuery() {
     return this._runnersListQuery
+  }
+
+  get countDownRef() {
+    return this._countDownsRef
   }
 
   async getAllRunners() {
@@ -77,6 +84,15 @@ class DBServiceSingleton {
       throw new Error(`Something went wrong trying to delete Runner number ${runnerId}.`)
     }
   }
+
+  async upsertCountDownTimer(time: Date) {
+    try {
+      await setDoc(this.countDownRef, { time }, { merge: true })
+    } catch (error) {
+      console.error(error)
+      throw new Error('Something went wrong trying to update the countdown timer')
+    }
+  }
 }
 
 export const DBService = new DBServiceSingleton()
@@ -100,4 +116,19 @@ export function useRunners() {
   }, [])
 
   return { data, refreshData, status }
+}
+
+export function useCountDownTimer() {
+  const [countDownTimer, setCountDownTimer] = useState<CountDownTimer>()
+  const [status, setStatus] = useState(QueryStatus.Loading)
+
+  useEffect(() => {
+    return onSnapshot(DBService.countDownRef, (snapshot) => {
+      setStatus(QueryStatus.Idle)
+      const time = snapshot.get('time').toDate()
+      setCountDownTimer({ time })
+    })
+  }, [])
+
+  return { countDownTimer, status }
 }

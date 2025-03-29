@@ -7,3 +7,7 @@ export interface InputRunnerRow {
   name?: string
   lapCount?: number
 }
+
+export interface CountDownTimer {
+  time: Date
+}
