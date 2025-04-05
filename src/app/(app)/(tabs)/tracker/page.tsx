@@ -1,7 +1,7 @@
 'use client'
 
 import SubmitAnimation, { SubmissionState } from '@/components/SubmitAnimation'
-import { DBService } from '@/database/db-service'
+import RunnersService from '@/database/runners-service'
 import React, { FC, FocusEventHandler, useCallback, useRef, useState } from 'react'
 
 const IndexPage: FC = () => {
@@ -17,7 +17,7 @@ const IndexPage: FC = () => {
     setSubmissionState(SubmissionState.Pending)
 
     try {
-      await DBService.incrementRunnerLap(event.target.value)
+      await RunnersService.incrementRunnerLap(event.target.value)
       setSubmissionState(SubmissionState.Complete)
     } catch (error) {
       console.error(error)

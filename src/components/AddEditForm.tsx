@@ -1,6 +1,6 @@
 'use client'
 
-import { DBService } from '@/database/db-service'
+import RunnersService from '@/database/runners-service'
 import { InputRunnerRow } from '@/database/types'
 import { useRouter } from 'next/navigation'
 import { FC, useCallback, useRef, useState } from 'react'
@@ -41,7 +41,7 @@ const AddEditForm: FC<AddEditFormProps> = (props) => {
         runnerId: runnerNumber,
         lapCount: lapCount,
       }
-      await DBService.upsertRunner(input)
+      await RunnersService.upsert(input)
       setSubmissionState(SubmissionState.Complete)
     } catch (error) {
       console.error(error)
@@ -56,7 +56,7 @@ const AddEditForm: FC<AddEditFormProps> = (props) => {
     setSubmissionState(SubmissionState.Pending)
 
     try {
-      if (params?.runnerId) await DBService.deleteRunner(params.runnerId)
+      if (params?.runnerId) await RunnersService.delete(params.runnerId)
       setSubmissionState(SubmissionState.Complete)
     } catch (error) {
       console.error(error)

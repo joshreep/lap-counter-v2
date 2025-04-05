@@ -6,13 +6,18 @@ forEachTheme((theme) => {
   describe(`${theme} theme`, () => {
     test('should match snapshot', () => {
       const { container } = render(
-        <RunnerRowListItem item={{ runnerId: '1', name: 'George Washington', lapCount: 100 }} />,
+        <RunnerRowListItem
+          clickable
+          item={{ runnerId: '1', name: 'George Washington', lapCount: 100 }}
+        />,
       )
       expect(container.firstChild).toMatchSnapshot()
     })
 
     test('should render with no name prop', () => {
-      const { container } = render(<RunnerRowListItem item={{ runnerId: '1', lapCount: 100 }} />)
+      const { container } = render(
+        <RunnerRowListItem clickable item={{ runnerId: '1', lapCount: 100 }} />,
+      )
       expect(container.firstChild).toMatchSnapshot()
     })
   })

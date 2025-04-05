@@ -1,3 +1,9 @@
+export enum QueryStatus {
+  Idle = 'IDLE',
+  Loading = 'LOADING',
+  Error = 'ERROR',
+}
+
 export interface RunnerRow extends InputRunnerRow {
   lapCount: number
 }

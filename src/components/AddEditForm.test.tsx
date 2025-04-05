@@ -1,12 +1,12 @@
 import { forEachTheme } from '@/test-utils/ThemeWrapper'
 import AddEditForm, { AddEditFormProps } from './AddEditForm'
-import { DBService } from '@/database/db-service'
 import { fireEvent, render } from '@testing-library/react'
 import { act } from 'react'
+import RunnersService from '@/database/runners-service'
 
 const modes: AddEditFormProps['mode'][] = ['add', 'edit']
 
-jest.mock('@/database/db-service')
+jest.mock('@/database/runners-service')
 jest.mock('next/router')
 jest.useFakeTimers()
 
@@ -15,7 +15,7 @@ forEachTheme((theme) => {
     modes.forEach((mode) => {
       describe(`${mode} mode`, () => {
         afterEach(() => {
-          ;(DBService.upsertRunner as jest.Mock).mockReset()
+          ;(RunnersService.upsert as jest.Mock).mockReset()
         })
 
         test('should match snapshot', () => {
@@ -38,15 +38,15 @@ forEachTheme((theme) => {
           expect(runnerNameInput.value).toBe('Thomas Jefferson')
           if (mode === 'add') {
             await act(async () => fireEvent.click(getByText('Submit')))
-            expect(DBService.upsertRunner).toHaveBeenCalled()
+            expect(RunnersService.upsert).toHaveBeenCalled()
           }
           if (mode === 'edit') {
             const lapCountInput = getByLabelText('Lap Count') as HTMLInputElement
-            expect(DBService.upsertRunner).not.toHaveBeenCalled()
+            expect(RunnersService.upsert).not.toHaveBeenCalled()
             act(() => fireEvent.change(lapCountInput, { target: { value: 101 } }))
             expect(lapCountInput.value).toBe('101')
             await act(async () => fireEvent.click(getByText('Submit')))
-            expect(DBService.upsertRunner).toHaveBeenCalled()
+            expect(RunnersService.upsert).toHaveBeenCalled()
           }
         })
 
@@ -66,7 +66,7 @@ forEachTheme((theme) => {
             fireEvent.click(getByText('Submit'))
           })
 
-          expect(DBService.upsertRunner).toHaveBeenCalled()
+          expect(RunnersService.upsert).toHaveBeenCalled()
 
           // allow animations to finish
           act(() => {
@@ -95,7 +95,7 @@ forEachTheme((theme) => {
             })
 
             expect(confirmSpy).toHaveBeenCalled()
-            expect(DBService.deleteRunner).toHaveBeenCalledWith('17')
+            expect(RunnersService.delete).toHaveBeenCalledWith('17')
 
             confirmSpy.mockRestore()
           })

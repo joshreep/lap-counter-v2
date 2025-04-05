@@ -3,7 +3,7 @@
 exports[`dark theme should match snapshot 1`] = `
 <a
   class="bg-bg py-2.5 px-5 rounded-l-sm"
-  href="#"
+  href="/edit?runnerId=1&name=George+Washington&lapCount=100"
 >
   1
 </a>
@@ -12,7 +12,7 @@ exports[`dark theme should match snapshot 1`] = `
 exports[`dark theme should render with no name prop 1`] = `
 <a
   class="bg-bg py-2.5 px-5 rounded-l-sm"
-  href="#"
+  href="/edit?runnerId=1&lapCount=100"
 >
   1
 </a>
@@ -21,7 +21,7 @@ exports[`dark theme should render with no name prop 1`] = `
 exports[`light theme should match snapshot 1`] = `
 <a
   class="bg-bg py-2.5 px-5 rounded-l-sm"
-  href="#"
+  href="/edit?runnerId=1&name=George+Washington&lapCount=100"
 >
   1
 </a>
@@ -30,7 +30,7 @@ exports[`light theme should match snapshot 1`] = `
 exports[`light theme should render with no name prop 1`] = `
 <a
   class="bg-bg py-2.5 px-5 rounded-l-sm"
-  href="#"
+  href="/edit?runnerId=1&lapCount=100"
 >
   1
 </a>

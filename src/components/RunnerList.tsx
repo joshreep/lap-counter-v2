@@ -1,11 +1,12 @@
 'use client'
 
-import { QueryStatus, useRunners } from '@/database/db-service'
+import { useRunners } from '@/database/runners-service'
+import { QueryStatus } from '@/database/types'
 import usePrevious from '@joshreep/captain-hooks/dist/usePrevious'
+import classNames from 'classnames'
 import React, { FC } from 'react'
 import LoadingAnimation from './LoadingAnimation'
 import RunnerRowListItem from './RunnerRowListItem'
-import classNames from 'classnames'
 
 type RunnerListProps = {
   clickable?: boolean

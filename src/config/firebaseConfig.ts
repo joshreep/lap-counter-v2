@@ -1,6 +1,5 @@
 // Import the functions you need from the SDKs you need
 import { FirebaseOptions, initializeApp } from 'firebase/app'
-import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -16,10 +15,5 @@ const firebaseConfig: FirebaseOptions = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
-
-initializeAppCheck(app, {
-  provider: new ReCaptchaV3Provider(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!),
-  isTokenAutoRefreshEnabled: true,
-})
 
 export default app

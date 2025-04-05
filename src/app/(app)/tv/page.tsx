@@ -1,7 +1,7 @@
 'use client'
 
 import RunnerList from '@/components/RunnerList'
-import { useCountDownTimer } from '@/database/db-service'
+import { useCountDownTimer } from '@/database/count-down-service'
 import usePreciseTimer from '@/hooks/usePreciseTimer'
 import { useViewport } from '@/utils/viewport-utils'
 import { useRouter } from 'next/navigation'
@@ -16,7 +16,6 @@ const TVPage: FC = () => {
 
   useEffect(() => {
     const defaultFontSize = document.body.style.fontSize
-
     document.body.style.fontSize = `${(width / 1920) * 40}px`
 
     return () => {
