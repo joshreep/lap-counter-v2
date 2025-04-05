@@ -17,18 +17,23 @@ interface SubmitAnimationProps extends Omit<LottieComponentProps, 'animationData
 
 const SubmitAnimation: FC<SubmitAnimationProps> = (props) => {
   const { onAnimationFinish, submissionState } = props
+
   const onCheckAnimationFinished = useCallback(() => {
     setTimeout(() => {
       onAnimationFinish(undefined)
     }, 150)
   }, [onAnimationFinish])
 
-  if (submissionState === SubmissionState.Pending) return <LoadingAnimation />
+  switch (submissionState) {
+    case SubmissionState.Pending:
+      return <LoadingAnimation />
 
-  if (submissionState === SubmissionState.Complete)
-    return <CheckAnimation onComplete={onCheckAnimationFinished} />
+    case SubmissionState.Complete:
+      return <CheckAnimation onComplete={onCheckAnimationFinished} />
 
-  return null
+    default:
+      return null
+  }
 }
 
 export default SubmitAnimation

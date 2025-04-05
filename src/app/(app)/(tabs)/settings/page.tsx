@@ -2,7 +2,7 @@
 
 import { AuthContext } from '@/authentication/auth'
 import InputGroup from '@/components/form/InputGroup'
-import { DBService, useCountDownTimer } from '@/database/db-service'
+import CountDownService, { useCountDownTimer } from '@/database/count-down-service'
 import { addMinutes, differenceInMinutes, format } from 'date-fns'
 import React, { FocusEventHandler, useCallback, useContext, useEffect, useState } from 'react'
 
@@ -36,13 +36,13 @@ export default function SettingsPage() {
       date.setMilliseconds(0)
       date.setHours(countDownToTime.getUTCHours())
       date.setMinutes(countDownToTime.getUTCMinutes())
-      DBService.upsertCountDownTimer(date)
+      CountDownService.upsertCountDownTimer(date)
     }
   }, [countDownToTime])
 
   const handleMinutesInputChange: FocusEventHandler<HTMLInputElement> = useCallback((e) => {
     if (e.target.valueAsNumber) {
-      DBService.upsertCountDownTimer(addMinutes(Date.now(), e.target.valueAsNumber))
+      CountDownService.upsertCountDownTimer(addMinutes(Date.now(), e.target.valueAsNumber))
     }
   }, [])
 
