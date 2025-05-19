@@ -21,7 +21,7 @@
     "@joshreep/captain-hooks": "^1.0.1",
     "classnames": "^2.5.1",
     "date-fns": "^4.1.0",
-    "firebase": "^11.6.0",
+    "firebase": "^11.7.3",
     "lottie-react": "^2.4.1",
     "next": "^15.2.4",
     "react": "^19.0.0",
