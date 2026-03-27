@@ -12,9 +12,9 @@
     "test:ci": "jest --ci",
     "test:precommit": "jest --ci --changedSince HEAD~1",
     "dev:emulators": "NEXT_PUBLIC_USE_FIREBASE_EMULATORS=true NEXT_PUBLIC_FIREBASE_PROJECT_ID=demo-lap-counter NEXT_PUBLIC_FIREBASE_API_KEY=fake-api-key firebase emulators:exec --only auth,firestore 'node scripts/seed-emulator.mjs next dev --turbopack'",
-    "test:e2e": "firebase emulators:exec --only auth,firestore 'npx playwright test'",
-    "test:e2e:ui": "firebase emulators:exec --only auth,firestore 'npx playwright test --ui'",
-    "test:e2e:headed": "firebase emulators:exec --only auth,firestore 'npx playwright test --headed'",
+    "test:e2e": "firebase emulators:exec --only auth,firestore --project demo-lap-counter 'npx playwright test'",
+    "test:e2e:ui": "firebase emulators:exec --only auth,firestore --project demo-lap-counter 'npx playwright test --ui'",
+    "test:e2e:headed": "firebase emulators:exec --only auth,firestore --project demo-lap-counter 'npx playwright test --headed'",
     "prepare": "husky",
     "commitlint": "commitlint --edit"
   },

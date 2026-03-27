@@ -12,7 +12,6 @@ test('add runner with grade', async ({ page }) => {
   await page.getByLabel('Runner Number').fill('10')
   await page.getByLabel('Name').fill('Abraham Lincoln')
   await page.getByLabel('Grade').selectOption('Pre-K')
-  await page.getByLabel('Gender').selectOption('Boy')
   await page.getByRole('button', { name: 'Submit' }).click()
   await expect(page.getByLabel('Runner Number')).toHaveValue('', { timeout: 10000 })
 
@@ -36,7 +35,6 @@ test('grade is required for submission', async ({ page }) => {
   await page.goto('/add')
   await page.getByLabel('Runner Number').fill('20')
   await page.getByLabel('Name').fill('Test Runner')
-  await page.getByLabel('Gender').selectOption('Boy')
   // Do NOT select a grade
   await page.getByRole('button', { name: 'Submit' }).click()
 
@@ -50,7 +48,6 @@ test('edit runner preserves grade', async ({ page }) => {
   await page.getByLabel('Runner Number').fill('15')
   await page.getByLabel('Name').fill('James Madison')
   await page.getByLabel('Grade').selectOption('7')
-  await page.getByLabel('Gender').selectOption('Girl')
   await page.getByRole('button', { name: 'Submit' }).click()
   await expect(page.getByLabel('Runner Number')).toHaveValue('', { timeout: 10000 })
 

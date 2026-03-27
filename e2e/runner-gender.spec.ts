@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test'
 import { clearFirestoreData } from './helpers/firebase-emulator'
+import { navigateTo, navigateToTab } from './helpers/navigation'
 
 const GENDER_OPTIONS = ['Boy', 'Girl']
 
@@ -8,7 +9,7 @@ test.beforeEach(async () => {
 })
 
 test('add runner with gender', async ({ page }) => {
-  await page.goto('/add')
+  await navigateTo(page, '/add')
   await page.getByLabel('Runner Number').fill('10')
   await page.getByLabel('Name').fill('Abraham Lincoln')
   await page.getByLabel('Grade').selectOption('Pre-K')
@@ -16,12 +17,12 @@ test('add runner with gender', async ({ page }) => {
   await page.getByRole('button', { name: 'Submit' }).click()
   await expect(page.getByLabel('Runner Number')).toHaveValue('', { timeout: 10000 })
 
-  await page.goto('/list')
+  await navigateToTab(page, '/list')
   await expect(page.getByText('Abraham Lincoln')).toBeVisible()
 })
 
 test('gender select has all expected options', async ({ page }) => {
-  await page.goto('/add')
+  await navigateTo(page, '/add')
 
   const genderSelect = page.getByLabel('Gender')
   const options = genderSelect.locator('option:not([disabled])')
@@ -33,7 +34,7 @@ test('gender select has all expected options', async ({ page }) => {
 })
 
 test('gender is required for submission', async ({ page }) => {
-  await page.goto('/add')
+  await navigateTo(page, '/add')
   await page.getByLabel('Runner Number').fill('20')
   await page.getByLabel('Name').fill('Test Runner')
   await page.getByLabel('Grade').selectOption('K')
@@ -46,7 +47,7 @@ test('gender is required for submission', async ({ page }) => {
 })
 
 test('edit runner preserves gender', async ({ page }) => {
-  await page.goto('/add')
+  await navigateTo(page, '/add')
   await page.getByLabel('Runner Number').fill('15')
   await page.getByLabel('Name').fill('James Madison')
   await page.getByLabel('Grade').selectOption('7')
@@ -54,7 +55,7 @@ test('edit runner preserves gender', async ({ page }) => {
   await page.getByRole('button', { name: 'Submit' }).click()
   await expect(page.getByLabel('Runner Number')).toHaveValue('', { timeout: 10000 })
 
-  await page.goto('/list')
+  await navigateToTab(page, '/list')
   await expect(page.getByText('James Madison')).toBeVisible()
 
   await page.getByText('James Madison').click()

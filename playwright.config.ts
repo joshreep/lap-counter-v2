@@ -31,14 +31,16 @@ export default defineConfig({
         storageState: 'e2e/.auth/user.json',
       },
       testIgnore: /auth\.spec\.ts/,
-      dependencies: ['setup'],
+      dependencies: ['setup', 'webkit'],
     },
     {
       name: 'auth-tests',
       testMatch: /auth\.spec\.ts/,
       use: {
         ...devices['Desktop Safari'],
+        storageState: { cookies: [], origins: [] },
       },
+      dependencies: ['webkit', 'chromium'],
     },
   ],
   webServer: {
