@@ -4,6 +4,20 @@ export enum QueryStatus {
   Error = 'ERROR',
 }
 
+export enum Grade {
+  PreK = 'Pre-K',
+  K = 'K',
+  First = '1',
+  Second = '2',
+  Third = '3',
+  Fourth = '4',
+  Fifth = '5',
+  Sixth = '6',
+  Seventh = '7',
+  Eighth = '8',
+  NA = 'N/A',
+}
+
 export interface RunnerRow extends InputRunnerRow {
   lapCount: number
 }
@@ -11,6 +25,7 @@ export interface RunnerRow extends InputRunnerRow {
 export interface InputRunnerRow {
   runnerId: string
   name?: string
+  grade: Grade
   lapCount?: number
 }
 

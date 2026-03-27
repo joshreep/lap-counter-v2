@@ -1,3 +1,4 @@
+import { Grade } from '@/database/types'
 import { forEachTheme } from '@/test-utils/ThemeWrapper'
 import { render } from '@testing-library/react'
 import RunnerRowListItem from './RunnerRowListItem'
@@ -8,7 +9,7 @@ forEachTheme((theme) => {
       const { container } = render(
         <RunnerRowListItem
           clickable
-          item={{ runnerId: '1', name: 'George Washington', lapCount: 100 }}
+          item={{ runnerId: '1', name: 'George Washington', grade: Grade.Fifth, lapCount: 100 }}
         />,
       )
       expect(container.firstChild).toMatchSnapshot()
@@ -16,7 +17,7 @@ forEachTheme((theme) => {
 
     test('should render with no name prop', () => {
       const { container } = render(
-        <RunnerRowListItem clickable item={{ runnerId: '1', lapCount: 100 }} />,
+        <RunnerRowListItem clickable item={{ runnerId: '1', grade: Grade.NA, lapCount: 100 }} />,
       )
       expect(container.firstChild).toMatchSnapshot()
     })

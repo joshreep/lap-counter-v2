@@ -46,6 +46,85 @@ exports[`dark theme add mode should match snapshot 1`] = `
       />
     </div>
     <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="grade"
+      >
+        Grade
+      </label>
+      <select
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="gradeSelect"
+        id="grade"
+        required=""
+      >
+        <option
+          disabled=""
+          value=""
+        >
+          Select 
+          Grade
+        </option>
+        <option
+          value="Pre-K"
+        >
+          Pre-K
+        </option>
+        <option
+          value="K"
+        >
+          K
+        </option>
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+        <option
+          value="4"
+        >
+          4
+        </option>
+        <option
+          value="5"
+        >
+          5
+        </option>
+        <option
+          value="6"
+        >
+          6
+        </option>
+        <option
+          value="7"
+        >
+          7
+        </option>
+        <option
+          value="8"
+        >
+          8
+        </option>
+        <option
+          value="N/A"
+        >
+          N/A
+        </option>
+      </select>
+    </div>
+    <div
       class="flex justify-between gap-5 flex-row-reverse"
     >
       <button
@@ -103,6 +182,85 @@ exports[`dark theme edit mode should match snapshot 1`] = `
         id="name"
         value=""
       />
+    </div>
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="grade"
+      >
+        Grade
+      </label>
+      <select
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="gradeSelect"
+        id="grade"
+        required=""
+      >
+        <option
+          disabled=""
+          value=""
+        >
+          Select 
+          Grade
+        </option>
+        <option
+          value="Pre-K"
+        >
+          Pre-K
+        </option>
+        <option
+          value="K"
+        >
+          K
+        </option>
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+        <option
+          value="4"
+        >
+          4
+        </option>
+        <option
+          value="5"
+        >
+          5
+        </option>
+        <option
+          value="6"
+        >
+          6
+        </option>
+        <option
+          value="7"
+        >
+          7
+        </option>
+        <option
+          value="8"
+        >
+          8
+        </option>
+        <option
+          value="N/A"
+        >
+          N/A
+        </option>
+      </select>
     </div>
     <div
       class="flex flex-col gap-1"
@@ -188,6 +346,85 @@ exports[`light theme add mode should match snapshot 1`] = `
       />
     </div>
     <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="grade"
+      >
+        Grade
+      </label>
+      <select
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="gradeSelect"
+        id="grade"
+        required=""
+      >
+        <option
+          disabled=""
+          value=""
+        >
+          Select 
+          Grade
+        </option>
+        <option
+          value="Pre-K"
+        >
+          Pre-K
+        </option>
+        <option
+          value="K"
+        >
+          K
+        </option>
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+        <option
+          value="4"
+        >
+          4
+        </option>
+        <option
+          value="5"
+        >
+          5
+        </option>
+        <option
+          value="6"
+        >
+          6
+        </option>
+        <option
+          value="7"
+        >
+          7
+        </option>
+        <option
+          value="8"
+        >
+          8
+        </option>
+        <option
+          value="N/A"
+        >
+          N/A
+        </option>
+      </select>
+    </div>
+    <div
       class="flex justify-between gap-5 flex-row-reverse"
     >
       <button
@@ -245,6 +482,85 @@ exports[`light theme edit mode should match snapshot 1`] = `
         id="name"
         value=""
       />
+    </div>
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="grade"
+      >
+        Grade
+      </label>
+      <select
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="gradeSelect"
+        id="grade"
+        required=""
+      >
+        <option
+          disabled=""
+          value=""
+        >
+          Select 
+          Grade
+        </option>
+        <option
+          value="Pre-K"
+        >
+          Pre-K
+        </option>
+        <option
+          value="K"
+        >
+          K
+        </option>
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="2"
+        >
+          2
+        </option>
+        <option
+          value="3"
+        >
+          3
+        </option>
+        <option
+          value="4"
+        >
+          4
+        </option>
+        <option
+          value="5"
+        >
+          5
+        </option>
+        <option
+          value="6"
+        >
+          6
+        </option>
+        <option
+          value="7"
+        >
+          7
+        </option>
+        <option
+          value="8"
+        >
+          8
+        </option>
+        <option
+          value="N/A"
+        >
+          N/A
+        </option>
+      </select>
     </div>
     <div
       class="flex flex-col gap-1"

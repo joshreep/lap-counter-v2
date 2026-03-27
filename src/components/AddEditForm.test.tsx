@@ -3,6 +3,7 @@ import AddEditForm, { AddEditFormProps } from './AddEditForm'
 import { fireEvent, render } from '@testing-library/react'
 import { act } from 'react'
 import RunnersService from '@/database/runners-service'
+import { Grade } from '@/database/types'
 
 const modes: AddEditFormProps['mode'][] = ['add', 'edit']
 
@@ -28,6 +29,7 @@ forEachTheme((theme) => {
 
           const runnerIdInput = getByLabelText('Runner Number') as HTMLInputElement
           const runnerNameInput = getByLabelText('Name') as HTMLInputElement
+          const gradeSelect = getByLabelText('Grade') as HTMLSelectElement
 
           if (mode === 'add') {
             act(() => fireEvent.change(runnerIdInput, { target: { value: '1' } }))
@@ -36,6 +38,8 @@ forEachTheme((theme) => {
           }
           act(() => fireEvent.change(runnerNameInput, { target: { value: 'Thomas Jefferson' } }))
           expect(runnerNameInput.value).toBe('Thomas Jefferson')
+          act(() => fireEvent.change(gradeSelect, { target: { value: Grade.Third } }))
+          expect(gradeSelect.value).toBe(Grade.Third)
           if (mode === 'add') {
             await act(async () => fireEvent.click(getByText('Submit')))
             expect(RunnersService.upsert).toHaveBeenCalled()
@@ -55,10 +59,12 @@ forEachTheme((theme) => {
 
           const runnerIdInput = getByLabelText('Runner Number') as HTMLInputElement
           const runnerNameInput = getByLabelText('Name') as HTMLInputElement
+          const gradeSelect = getByLabelText('Grade') as HTMLSelectElement
 
           act(() => {
             if (mode === 'add') fireEvent.change(runnerIdInput, { target: { value: '1' } })
             fireEvent.change(runnerNameInput, { target: { value: 'George Washington' } })
+            fireEvent.change(gradeSelect, { target: { value: Grade.Fifth } })
             if (mode === 'edit')
               fireEvent.change(getByLabelText('Lap Count'), { target: { value: 20 } })
           })
@@ -76,6 +82,7 @@ forEachTheme((theme) => {
           if (mode === 'add') {
             expect(runnerIdInput.value).toBe('')
             expect(runnerNameInput.value).toBe('')
+            expect(gradeSelect.value).toBe('')
           }
         })
 
@@ -84,7 +91,7 @@ forEachTheme((theme) => {
             const { getByText } = render(
               <AddEditForm
                 mode="edit"
-                params={{ name: 'George', runnerId: '17', lapCount: '10' }}
+                params={{ name: 'George', runnerId: '17', grade: Grade.Third, lapCount: '10' }}
               />,
             )
 
