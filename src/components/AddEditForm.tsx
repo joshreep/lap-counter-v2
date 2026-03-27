@@ -1,7 +1,7 @@
 'use client'
 
 import RunnersService from '@/database/runners-service'
-import { Gender, Grade, InputRunnerRow } from '@/database/types'
+import { Gender, Grade, gradeDisplayLabels, InputRunnerRow } from '@/database/types'
 import { useRouter } from 'next/navigation'
 import { FC, useCallback, useRef, useState } from 'react'
 import Button from './Button'
@@ -10,7 +10,7 @@ import SubmitAnimation, { SubmissionState } from './SubmitAnimation'
 import InputGroup from './form/InputGroup'
 import SelectGroup from './form/SelectGroup'
 
-const gradeOptions = Object.values(Grade).map((g) => ({ label: g, value: g }))
+const gradeOptions = Object.values(Grade).map((g) => ({ label: gradeDisplayLabels[g], value: g }))
 const genderOptions = Object.values(Gender).map((g) => ({ label: g, value: g }))
 
 export interface AddEditFormProps {

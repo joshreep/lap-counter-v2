@@ -18,6 +18,20 @@ export enum Grade {
   NA = 'N/A',
 }
 
+export const gradeDisplayLabels: Record<Grade, string> = {
+  [Grade.PreK]: 'Pre-K',
+  [Grade.K]: 'Kindergarten',
+  [Grade.First]: '1st Grade',
+  [Grade.Second]: '2nd Grade',
+  [Grade.Third]: '3rd Grade',
+  [Grade.Fourth]: '4th Grade',
+  [Grade.Fifth]: '5th Grade',
+  [Grade.Sixth]: '6th Grade',
+  [Grade.Seventh]: '7th Grade',
+  [Grade.Eighth]: '8th Grade',
+  [Grade.NA]: 'N/A',
+}
+
 export enum Gender {
   Boy = 'Boy',
   Girl = 'Girl',
@@ -37,4 +51,8 @@ export interface InputRunnerRow {
 
 export interface CountDownTimer {
   time: Date
+}
+
+export interface AppSettings {
+  groupByGradeAndGender: boolean
 }
