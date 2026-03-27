@@ -13,6 +13,7 @@ test('add a runner', async ({ page }) => {
   await page.getByLabel('Runner Number').fill('42')
   await page.getByLabel('Name').fill('George Washington')
   await page.getByLabel('Grade').selectOption('5')
+  await page.getByLabel('Gender').selectOption('Boy')
   await page.getByRole('button', { name: 'Submit' }).click()
   await expect(page.getByLabel('Runner Number')).toHaveValue('', { timeout: 10000 })
 
@@ -26,6 +27,7 @@ test('edit a runner', async ({ page }) => {
   await page.getByLabel('Runner Number').fill('7')
   await page.getByLabel('Name').fill('John Adams')
   await page.getByLabel('Grade').selectOption('3')
+  await page.getByLabel('Gender').selectOption('Boy')
   await page.getByRole('button', { name: 'Submit' }).click()
   await expect(page.getByLabel('Runner Number')).toHaveValue('', { timeout: 10000 })
 
@@ -47,6 +49,7 @@ test('delete a runner', async ({ page }) => {
   await page.getByLabel('Runner Number').fill('99')
   await page.getByLabel('Name').fill('Thomas Jefferson')
   await page.getByLabel('Grade').selectOption('K')
+  await page.getByLabel('Gender').selectOption('Girl')
   await page.getByRole('button', { name: 'Submit' }).click()
   await expect(page.getByLabel('Runner Number')).toHaveValue('', { timeout: 10000 })
 

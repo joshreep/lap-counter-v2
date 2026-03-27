@@ -18,6 +18,11 @@ export enum Grade {
   NA = 'N/A',
 }
 
+export enum Gender {
+  Boy = 'Boy',
+  Girl = 'Girl',
+}
+
 export interface RunnerRow extends InputRunnerRow {
   lapCount: number
 }
@@ -26,6 +31,7 @@ export interface InputRunnerRow {
   runnerId: string
   name?: string
   grade: Grade
+  gender?: Gender
   lapCount?: number
 }
 

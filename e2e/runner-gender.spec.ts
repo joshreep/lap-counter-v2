@@ -1,13 +1,13 @@
 import { test, expect } from '@playwright/test'
 import { clearFirestoreData } from './helpers/firebase-emulator'
 
-const GRADE_OPTIONS = ['Pre-K', 'K', '1', '2', '3', '4', '5', '6', '7', '8', 'N/A']
+const GENDER_OPTIONS = ['Boy', 'Girl']
 
 test.beforeEach(async () => {
   await clearFirestoreData()
 })
 
-test('add runner with grade', async ({ page }) => {
+test('add runner with gender', async ({ page }) => {
   await page.goto('/add')
   await page.getByLabel('Runner Number').fill('10')
   await page.getByLabel('Name').fill('Abraham Lincoln')
@@ -20,32 +20,32 @@ test('add runner with grade', async ({ page }) => {
   await expect(page.getByText('Abraham Lincoln')).toBeVisible()
 })
 
-test('grade select has all expected options', async ({ page }) => {
+test('gender select has all expected options', async ({ page }) => {
   await page.goto('/add')
 
-  const gradeSelect = page.getByLabel('Grade')
-  const options = gradeSelect.locator('option:not([disabled])')
+  const genderSelect = page.getByLabel('Gender')
+  const options = genderSelect.locator('option:not([disabled])')
 
-  await expect(options).toHaveCount(GRADE_OPTIONS.length)
-  for (const grade of GRADE_OPTIONS) {
-    await expect(gradeSelect.locator(`option[value="${grade}"]`)).toBeAttached()
+  await expect(options).toHaveCount(GENDER_OPTIONS.length)
+  for (const gender of GENDER_OPTIONS) {
+    await expect(genderSelect.locator(`option[value="${gender}"]`)).toBeAttached()
   }
 })
 
-test('grade is required for submission', async ({ page }) => {
+test('gender is required for submission', async ({ page }) => {
   await page.goto('/add')
   await page.getByLabel('Runner Number').fill('20')
   await page.getByLabel('Name').fill('Test Runner')
-  await page.getByLabel('Gender').selectOption('Boy')
-  // Do NOT select a grade
+  await page.getByLabel('Grade').selectOption('K')
+  // Do NOT select a gender
   await page.getByRole('button', { name: 'Submit' }).click()
 
   // Form should still be on the add page
   await expect(page).toHaveURL(/.*add/)
-  await expect(page.getByLabel('Grade')).toHaveValue('')
+  await expect(page.getByLabel('Gender')).toHaveValue('')
 })
 
-test('edit runner preserves grade', async ({ page }) => {
+test('edit runner preserves gender', async ({ page }) => {
   await page.goto('/add')
   await page.getByLabel('Runner Number').fill('15')
   await page.getByLabel('Name').fill('James Madison')
@@ -60,5 +60,5 @@ test('edit runner preserves grade', async ({ page }) => {
   await page.getByText('James Madison').click()
   await expect(page).toHaveURL(/.*edit/)
 
-  await expect(page.getByLabel('Grade')).toHaveValue('7')
+  await expect(page.getByLabel('Gender')).toHaveValue('Girl')
 })

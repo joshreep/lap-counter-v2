@@ -125,6 +125,40 @@ exports[`dark theme add mode should match snapshot 1`] = `
       </select>
     </div>
     <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="gender"
+      >
+        Gender
+      </label>
+      <select
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="genderSelect"
+        id="gender"
+        required=""
+      >
+        <option
+          disabled=""
+          value=""
+        >
+          Select 
+          Gender
+        </option>
+        <option
+          value="Boy"
+        >
+          Boy
+        </option>
+        <option
+          value="Girl"
+        >
+          Girl
+        </option>
+      </select>
+    </div>
+    <div
       class="flex justify-between gap-5 flex-row-reverse"
     >
       <button
@@ -259,6 +293,40 @@ exports[`dark theme edit mode should match snapshot 1`] = `
           value="N/A"
         >
           N/A
+        </option>
+      </select>
+    </div>
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="gender"
+      >
+        Gender
+      </label>
+      <select
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="genderSelect"
+        id="gender"
+        required=""
+      >
+        <option
+          disabled=""
+          value=""
+        >
+          Select 
+          Gender
+        </option>
+        <option
+          value="Boy"
+        >
+          Boy
+        </option>
+        <option
+          value="Girl"
+        >
+          Girl
         </option>
       </select>
     </div>
@@ -425,6 +493,40 @@ exports[`light theme add mode should match snapshot 1`] = `
       </select>
     </div>
     <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="gender"
+      >
+        Gender
+      </label>
+      <select
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="genderSelect"
+        id="gender"
+        required=""
+      >
+        <option
+          disabled=""
+          value=""
+        >
+          Select 
+          Gender
+        </option>
+        <option
+          value="Boy"
+        >
+          Boy
+        </option>
+        <option
+          value="Girl"
+        >
+          Girl
+        </option>
+      </select>
+    </div>
+    <div
       class="flex justify-between gap-5 flex-row-reverse"
     >
       <button
@@ -559,6 +661,40 @@ exports[`light theme edit mode should match snapshot 1`] = `
           value="N/A"
         >
           N/A
+        </option>
+      </select>
+    </div>
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="gender"
+      >
+        Gender
+      </label>
+      <select
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="genderSelect"
+        id="gender"
+        required=""
+      >
+        <option
+          disabled=""
+          value=""
+        >
+          Select 
+          Gender
+        </option>
+        <option
+          value="Boy"
+        >
+          Boy
+        </option>
+        <option
+          value="Girl"
+        >
+          Girl
         </option>
       </select>
     </div>

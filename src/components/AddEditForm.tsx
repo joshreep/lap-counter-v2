@@ -1,7 +1,7 @@
 'use client'
 
 import RunnersService from '@/database/runners-service'
-import { Grade, InputRunnerRow } from '@/database/types'
+import { Gender, Grade, InputRunnerRow } from '@/database/types'
 import { useRouter } from 'next/navigation'
 import { FC, useCallback, useRef, useState } from 'react'
 import Button from './Button'
@@ -11,6 +11,7 @@ import InputGroup from './form/InputGroup'
 import SelectGroup from './form/SelectGroup'
 
 const gradeOptions = Object.values(Grade).map((g) => ({ label: g, value: g }))
+const genderOptions = Object.values(Gender).map((g) => ({ label: g, value: g }))
 
 export interface AddEditFormProps {
   mode: 'add' | 'edit'
@@ -32,6 +33,11 @@ const AddEditForm: FC<AddEditFormProps> = (props) => {
       ? (params.grade as Grade)
       : '',
   )
+  const [gender, setGender] = useState<Gender | ''>(
+    params?.gender && Object.values(Gender).includes(params.gender as Gender)
+      ? (params.gender as Gender)
+      : '',
+  )
   const [lapCount, setLapCount] = useState(params?.lapCount ? +params.lapCount : 0)
   const [submissionState, setSubmissionState] = useState(SubmissionState.Idle)
 
@@ -48,6 +54,7 @@ const AddEditForm: FC<AddEditFormProps> = (props) => {
         name: runnerName,
         runnerId: runnerNumber,
         grade: grade as Grade,
+        gender: gender as Gender,
         lapCount: lapCount,
       }
       await RunnersService.upsert(input)
@@ -56,7 +63,7 @@ const AddEditForm: FC<AddEditFormProps> = (props) => {
       console.error(error)
       setSubmissionState(SubmissionState.Error)
     }
-  }, [grade, lapCount, runnerName, runnerNumber, showLapCount])
+  }, [gender, grade, lapCount, runnerName, runnerNumber, showLapCount])
 
   const onSubmitDelete = useCallback(async () => {
     nameInputRef.current?.blur()
@@ -89,6 +96,7 @@ const AddEditForm: FC<AddEditFormProps> = (props) => {
       setRunnerName('')
       setRunnerNumber('')
       setGrade('')
+      setGender('')
       runnerNumberInputRef.current?.focus()
     } else {
       router.back()
@@ -131,6 +139,15 @@ const AddEditForm: FC<AddEditFormProps> = (props) => {
           options={gradeOptions}
           required
           value={grade}
+        />
+        <SelectGroup
+          data-testid="genderSelect"
+          id="gender"
+          label="Gender"
+          onChange={(e) => setGender(e.target.value as Gender)}
+          options={genderOptions}
+          required
+          value={gender}
         />
         {showLapCount && (
           <InputGroup
