@@ -1,7 +1,12 @@
+'use client'
+
 import animation from '@/animations/loading-animation.json'
 import classNames from 'classnames'
-import Lottie, { LottieComponentProps } from 'lottie-react'
+import { LottieComponentProps } from 'lottie-react'
+import dynamic from 'next/dynamic'
 import React, { FC } from 'react'
+
+const Lottie = dynamic(() => import('lottie-react').then((mod) => mod.default), { ssr: false })
 
 type LoadingAnimationProps = Omit<LottieComponentProps, 'animationData'> & {}
 

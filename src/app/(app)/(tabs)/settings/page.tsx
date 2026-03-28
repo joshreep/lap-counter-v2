@@ -2,6 +2,7 @@
 
 import { AuthContext } from '@/authentication/auth'
 import InputGroup from '@/components/form/InputGroup'
+import AppSettingsService, { useAppSettings } from '@/database/app-settings-service'
 import CountDownService, { useCountDownTimer } from '@/database/count-down-service'
 import { addMinutes, differenceInMinutes, format } from 'date-fns'
 import React, { FocusEventHandler, useCallback, useContext, useEffect, useState } from 'react'
@@ -9,6 +10,7 @@ import React, { FocusEventHandler, useCallback, useContext, useEffect, useState 
 export default function SettingsPage() {
   const { signOut } = useContext(AuthContext)
 
+  const { appSettings } = useAppSettings()
   const { countDownTimer } = useCountDownTimer()
 
   const [countDownToTime, setCountDownToTime] = useState<Date>(
@@ -75,6 +77,18 @@ export default function SettingsPage() {
           // max={480}
         />
       </form>
+      <h2 className="text-3xl">TV View Settings</h2>
+      <label className="flex items-center gap-3 cursor-pointer">
+        <input
+          type="checkbox"
+          className="w-5 h-5"
+          checked={appSettings.groupByGradeAndGender}
+          onChange={(e) =>
+            AppSettingsService.upsertSettings({ groupByGradeAndGender: e.target.checked })
+          }
+        />
+        <span>Group TV View by Grade &amp; Gender</span>
+      </label>
       <h2 className="text-3xl">Manage Account</h2>
       <div>
         <button

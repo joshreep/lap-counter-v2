@@ -1,13 +1,17 @@
 'use client'
 
 import RunnersService from '@/database/runners-service'
-import { InputRunnerRow } from '@/database/types'
+import { Gender, Grade, gradeDisplayLabels, InputRunnerRow } from '@/database/types'
 import { useRouter } from 'next/navigation'
 import { FC, useCallback, useRef, useState } from 'react'
 import Button from './Button'
 import ButtonGroup from './ButtonGroup'
 import SubmitAnimation, { SubmissionState } from './SubmitAnimation'
 import InputGroup from './form/InputGroup'
+import SelectGroup from './form/SelectGroup'
+
+const gradeOptions = Object.values(Grade).map((g) => ({ label: gradeDisplayLabels[g], value: g }))
+const genderOptions = Object.values(Gender).map((g) => ({ label: g, value: g }))
 
 export interface AddEditFormProps {
   mode: 'add' | 'edit'
@@ -24,6 +28,16 @@ const AddEditForm: FC<AddEditFormProps> = (props) => {
 
   const [runnerName, setRunnerName] = useState(params?.name ?? '')
   const [runnerNumber, setRunnerNumber] = useState(params?.runnerId ?? '')
+  const [grade, setGrade] = useState<Grade | ''>(
+    params?.grade && Object.values(Grade).includes(params.grade as Grade)
+      ? (params.grade as Grade)
+      : '',
+  )
+  const [gender, setGender] = useState<Gender | ''>(
+    params?.gender && Object.values(Gender).includes(params.gender as Gender)
+      ? (params.gender as Gender)
+      : '',
+  )
   const [lapCount, setLapCount] = useState(params?.lapCount ? +params.lapCount : 0)
   const [submissionState, setSubmissionState] = useState(SubmissionState.Idle)
 
@@ -39,6 +53,8 @@ const AddEditForm: FC<AddEditFormProps> = (props) => {
       const input: InputRunnerRow = {
         name: runnerName,
         runnerId: runnerNumber,
+        grade: grade as Grade,
+        gender: gender as Gender,
         lapCount: lapCount,
       }
       await RunnersService.upsert(input)
@@ -47,7 +63,7 @@ const AddEditForm: FC<AddEditFormProps> = (props) => {
       console.error(error)
       setSubmissionState(SubmissionState.Error)
     }
-  }, [lapCount, runnerName, runnerNumber, showLapCount])
+  }, [gender, grade, lapCount, runnerName, runnerNumber, showLapCount])
 
   const onSubmitDelete = useCallback(async () => {
     nameInputRef.current?.blur()
@@ -79,6 +95,8 @@ const AddEditForm: FC<AddEditFormProps> = (props) => {
     if (mode === 'add') {
       setRunnerName('')
       setRunnerNumber('')
+      setGrade('')
+      setGender('')
       runnerNumberInputRef.current?.focus()
     } else {
       router.back()
@@ -112,6 +130,24 @@ const AddEditForm: FC<AddEditFormProps> = (props) => {
           onBlur={() => showLapCount && lapCountInputRef.current?.focus()}
           ref={nameInputRef}
           value={runnerName}
+        />
+        <SelectGroup
+          data-testid="gradeSelect"
+          id="grade"
+          label="Grade"
+          onChange={(e) => setGrade(e.target.value as Grade)}
+          options={gradeOptions}
+          required
+          value={grade}
+        />
+        <SelectGroup
+          data-testid="genderSelect"
+          id="gender"
+          label="Gender"
+          onChange={(e) => setGender(e.target.value as Gender)}
+          options={genderOptions}
+          required
+          value={gender}
         />
         {showLapCount && (
           <InputGroup

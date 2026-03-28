@@ -92,6 +92,7 @@ function getErrorText(error: unknown, email: string): string {
   if (error instanceof FirebaseError) {
     switch (error.code) {
       case 'auth/invalid-credential':
+      case 'auth/wrong-password':
         return 'Incorrect username or password.  Please try again.'
 
       case 'auth/missing-email':
