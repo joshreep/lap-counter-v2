@@ -13,6 +13,7 @@ import { useRouter } from 'next/navigation'
 import { FC, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 export const LAP_DEBOUNCE_MS = 5000
+const LAP_DEBOUNCE_SECONDS = LAP_DEBOUNCE_MS / 1000
 const GRID_GAP_PX = 12
 
 const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value))
@@ -135,6 +136,11 @@ const RunnerButtonGrid: FC = () => {
 
   return (
     <div className="flex flex-col gap-3 h-full">
+      <p className="text-left text-sm text-disabled-text">
+        Tap a number to count a lap. The button fills in green over {LAP_DEBOUNCE_SECONDS} seconds,
+        and you can tap it again any time before it finishes to undo. Gray numbers aren&apos;t
+        registered yet. Tap one to add that runner.
+      </p>
       {error && <p className="text-error text-center">{error}</p>}
       <div className="flex-1 min-h-0" ref={gridAreaRef}>
         <div

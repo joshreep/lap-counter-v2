@@ -48,6 +48,12 @@ describe('RunnerButtonGrid', () => {
     expect(screen.getByRole('button', { name: 'Add a lap for runner 3' })).toBeTruthy()
   })
 
+  test('explains how the buttons work, using the debounce length', () => {
+    render(<RunnerButtonGrid />)
+
+    expect(screen.getByText(/fills in green over 5 seconds/)).toBeTruthy()
+  })
+
   test('only saves the lap once the debounce elapses', () => {
     render(<RunnerButtonGrid />)
 
