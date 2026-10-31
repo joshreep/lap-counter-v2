@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [20.x]
+        node: [24.x]
 
     steps:
       - uses: actions/checkout@v4
@@ -46,13 +46,14 @@ jobs:
   e2e:
     name: E2E Tests
     needs: main
-    runs-on: ubuntu-latest
+    # Playwright 1.58 doesn't support webkit on ubuntu-latest (26.04) yet
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: 24.x
           cache: yarn
 
       - uses: actions/setup-java@v4

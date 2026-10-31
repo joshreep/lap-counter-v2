@@ -92,7 +92,8 @@ const AddEditForm: FC<AddEditFormProps> = (props) => {
 
   const onCheckAnimationFinish = useCallback(() => {
     setSubmissionState(SubmissionState.Idle)
-    if (mode === 'add') {
+    // An add that was started for a specific runner number (e.g. from the tracker) returns to where it came from
+    if (mode === 'add' && !params?.runnerId) {
       setRunnerName('')
       setRunnerNumber('')
       setGrade('')
@@ -101,7 +102,7 @@ const AddEditForm: FC<AddEditFormProps> = (props) => {
     } else {
       router.back()
     }
-  }, [mode, router])
+  }, [mode, params?.runnerId, router])
 
   return (
     <div className="flex flex-col flex-1 items-center justify-start pt-10 pb-5 px-5">

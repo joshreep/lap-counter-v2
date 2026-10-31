@@ -1,10 +1,12 @@
 'use client'
 
+import RunnerButtonGrid from '@/components/RunnerButtonGrid'
 import SubmitAnimation, { SubmissionState } from '@/components/SubmitAnimation'
 import RunnersService from '@/database/runners-service'
+import { useDeviceSettings } from '@/hooks/useDeviceSettings'
 import React, { FC, FocusEventHandler, useCallback, useRef, useState } from 'react'
 
-const IndexPage: FC = () => {
+const NumberEntryTracker: FC = () => {
   const inputRef = useRef<HTMLInputElement>(null)
 
   const [value, setValue] = useState('')
@@ -67,6 +69,14 @@ const IndexPage: FC = () => {
       <SubmitAnimation submissionState={submissionState} onAnimationFinish={onAnimationFinish} />
     </form>
   )
+}
+
+const IndexPage: FC = () => {
+  const { deviceSettings, isLoaded } = useDeviceSettings()
+
+  if (!isLoaded) return null
+
+  return deviceSettings.useExperimentalTracker ? <RunnerButtonGrid /> : <NumberEntryTracker />
 }
 
 export default IndexPage
