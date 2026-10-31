@@ -2,8 +2,10 @@
 
 import { AuthContext } from '@/authentication/auth'
 import InputGroup from '@/components/form/InputGroup'
+import TrackerRangeInputs from '@/components/TrackerRangeInputs'
 import AppSettingsService, { useAppSettings } from '@/database/app-settings-service'
 import CountDownService, { useCountDownTimer } from '@/database/count-down-service'
+import { useDeviceSettings } from '@/hooks/useDeviceSettings'
 import { addMinutes, differenceInMinutes, format } from 'date-fns'
 import React, { FocusEventHandler, useCallback, useContext, useEffect, useState } from 'react'
 
@@ -12,6 +14,7 @@ export default function SettingsPage() {
 
   const { appSettings } = useAppSettings()
   const { countDownTimer } = useCountDownTimer()
+  const { deviceSettings, updateDeviceSettings } = useDeviceSettings()
 
   const [countDownToTime, setCountDownToTime] = useState<Date>(
     countDownTimer?.time ?? addMinutes(Date.now(), 60),
@@ -77,6 +80,7 @@ export default function SettingsPage() {
           // max={480}
         />
       </form>
+      <hr className="border-border/30" />
       <h2 className="text-3xl">TV View Settings</h2>
       <label className="flex items-center gap-3 cursor-pointer">
         <input
@@ -89,6 +93,19 @@ export default function SettingsPage() {
         />
         <span>Group TV View by Grade &amp; Gender</span>
       </label>
+      <hr className="border-border/30" />
+      <h2 className="text-3xl">Tracker Settings</h2>
+      <label className="flex items-center gap-3 cursor-pointer">
+        <input
+          type="checkbox"
+          className="w-5 h-5"
+          checked={deviceSettings.useExperimentalTracker}
+          onChange={(e) => updateDeviceSettings({ useExperimentalTracker: e.target.checked })}
+        />
+        <span>Use Experimental Tracker</span>
+      </label>
+      <TrackerRangeInputs />
+      <hr className="border-border/30" />
       <h2 className="text-3xl">Manage Account</h2>
       <div>
         <button
