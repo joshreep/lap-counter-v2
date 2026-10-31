@@ -2,6 +2,8 @@
 
 import {
   getRunnerNumberBounds,
+  RangeLimit,
+  MAX_TRACKER_RANGE_SIZE,
   getTrackerRangeLimits,
   validateTrackerRangeValue,
 } from '@/utils/tracker-range'
@@ -46,7 +48,7 @@ const TrackerRangeFields: FC<{ initialDrafts: Drafts }> = ({ initialDrafts }) =>
     }
   }
 
-  const renderInput = (key: RangeKey, label: string, limit?: { min: number; max: number }) => (
+  const renderInput = (key: RangeKey, label: string, limit?: RangeLimit) => (
     <div className="flex flex-col gap-1 w-[6.25rem]">
       <input
         id={key}
@@ -75,7 +77,9 @@ const TrackerRangeFields: FC<{ initialDrafts: Drafts }> = ({ initialDrafts }) =>
         <span className="pt-4">-</span>
         {renderInput('trackerRangeEnd', 'End', limits?.end)}
       </div>
-      {!bounds && <p className="ml-1.5 text-disabled-text">Add runners to set a range.</p>}
+      <p className="ml-1.5 text-disabled-text">
+        {bounds ? `Up to ${MAX_TRACKER_RANGE_SIZE} runners.` : 'Add runners to set a range.'}
+      </p>
     </div>
   )
 }

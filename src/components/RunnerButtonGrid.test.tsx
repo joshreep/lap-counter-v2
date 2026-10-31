@@ -23,6 +23,15 @@ jest.mock('@/hooks/useDeviceSettings', () => ({
 }))
 
 describe('RunnerButtonGrid', () => {
+  beforeAll(() => {
+    // jsdom has no layout engine or ResizeObserver
+    global.ResizeObserver = class {
+      observe = jest.fn()
+      unobserve = jest.fn()
+      disconnect = jest.fn()
+    }
+  })
+
   beforeEach(() => {
     jest.useFakeTimers()
   })

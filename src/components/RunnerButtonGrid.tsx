@@ -3,6 +3,8 @@
 import RunnersService, { useRunners } from '@/database/runners-service'
 import { QueryStatus } from '@/database/types'
 import { useDeviceSettings } from '@/hooks/useDeviceSettings'
+import { useElementSize } from '@/hooks/useElementSize'
+import { getGridLayout } from '@/utils/tracker-grid'
 import { getTrackerRunnerNumbers } from '@/utils/tracker-range'
 import { faRotateLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -11,6 +13,9 @@ import { useRouter } from 'next/navigation'
 import { FC, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 export const LAP_DEBOUNCE_MS = 5000
+const GRID_GAP_PX = 12
+
+const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value))
 
 /** Dims the button and fills it left to right over the debounce, like a progress bar. */
 const DebounceProgress: FC = () => {
@@ -39,6 +44,7 @@ const DebounceProgress: FC = () => {
 
 const RunnerButtonGrid: FC = () => {
   const router = useRouter()
+  const { ref: gridAreaRef, size: gridArea } = useElementSize<HTMLDivElement>()
   const { data: runners, status } = useRunners()
   const { deviceSettings, isLoaded } = useDeviceSettings()
   const [pending, setPending] = useState<Record<string, true>>({})
@@ -116,6 +122,9 @@ const RunnerButtonGrid: FC = () => {
     deviceSettings.trackerRangeEnd,
   )
 
+  const layout = getGridLayout(runnerNumbers.length, gridArea.width, gridArea.height, GRID_GAP_PX)
+  const cellSize = Math.min(layout.cellWidth, layout.cellHeight)
+
   if (runnerNumbers.length === 0) {
     return (
       <p className="text-center text-lg text-disabled-text">
@@ -125,51 +134,69 @@ const RunnerButtonGrid: FC = () => {
   }
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3 h-full">
       {error && <p className="text-error text-center">{error}</p>}
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(5.5rem,1fr))] gap-3">
-        {runnerNumbers.map((runnerNumber) => {
-          const runner = runnersByNumber.get(runnerNumber)
-          const isPending = !!runner && !!pending[runner.runnerId]
-          const lapCount = (runner?.lapCount ?? 0) + (isPending ? 1 : 0)
+      <div className="flex-1 min-h-0" ref={gridAreaRef}>
+        <div
+          className="grid"
+          style={{
+            gap: GRID_GAP_PX,
+            gridTemplateColumns: `repeat(${layout.columns}, minmax(0, 1fr))`,
+            ...(layout.scrolls
+              ? { gridAutoRows: layout.cellHeight }
+              : { gridTemplateRows: `repeat(${layout.rows}, minmax(0, 1fr))`, height: '100%' }),
+          }}
+        >
+          {runnerNumbers.map((runnerNumber) => {
+            const runner = runnersByNumber.get(runnerNumber)
+            const isPending = !!runner && !!pending[runner.runnerId]
+            const lapCount = (runner?.lapCount ?? 0) + (isPending ? 1 : 0)
 
-          return (
-            <button
-              key={runnerNumber}
-              type="button"
-              aria-label={
-                isPending
-                  ? `Undo lap for runner ${runnerNumber}`
-                  : runner
-                    ? `Add a lap for runner ${runnerNumber}`
-                    : `Add runner ${runnerNumber}`
-              }
-              className={classNames(
-                'relative overflow-hidden aspect-square rounded-2xl border-none text-white shadow-md',
-                'transition-transform duration-150 active:scale-90 cursor-pointer',
-                runner ? 'bg-primary' : 'bg-disabled-text',
-              )}
-              onClick={() => handleClick(runnerNumber)}
-            >
-              {isPending && (
-                <DebounceProgress />
-              )}
-              <span className="relative text-3xl font-bold">{runnerNumber}</span>
-              {runner && (
-                <span className="absolute top-1.5 right-2 text-xs font-semibold opacity-90">
-                  {lapCount}
+            return (
+              <button
+                key={runnerNumber}
+                type="button"
+                aria-label={
+                  isPending
+                    ? `Undo lap for runner ${runnerNumber}`
+                    : runner
+                      ? `Add a lap for runner ${runnerNumber}`
+                      : `Add runner ${runnerNumber}`
+                }
+                className={classNames(
+                  'relative overflow-hidden rounded-2xl border-none text-white shadow-md',
+                  'transition-transform duration-150 active:scale-90 cursor-pointer',
+                  runner ? 'bg-primary' : 'bg-disabled-text',
+                )}
+                onClick={() => handleClick(runnerNumber)}
+              >
+                {isPending && <DebounceProgress />}
+                <span
+                  className="relative font-bold"
+                  style={{ fontSize: clamp(cellSize * 0.38, 18, 72) }}
+                >
+                  {runnerNumber}
                 </span>
-              )}
-              {isPending && (
-                <FontAwesomeIcon
-                  aria-hidden
-                  className="absolute top-1.5 left-2 text-xs"
-                  icon={faRotateLeft}
-                />
-              )}
-            </button>
-          )
-        })}
+                {runner && (
+                  <span
+                    className="absolute top-1.5 right-2 font-semibold opacity-90"
+                    style={{ fontSize: clamp(cellSize * 0.14, 11, 20) }}
+                  >
+                    {lapCount}
+                  </span>
+                )}
+                {isPending && (
+                  <FontAwesomeIcon
+                    aria-hidden
+                    className="absolute top-1.5 left-2"
+                    style={{ fontSize: clamp(cellSize * 0.14, 11, 20) }}
+                    icon={faRotateLeft}
+                  />
+                )}
+              </button>
+            )
+          })}
+        </div>
       </div>
     </div>
   )
