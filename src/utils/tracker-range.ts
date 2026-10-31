@@ -42,3 +42,20 @@ export function validateTrackerRangeValue(
   if (value > max) return `Must be at most ${max}`
   return undefined
 }
+
+/**
+ * Every whole number in the (inclusive) range, whether or not a runner exists for it yet.
+ * An unset start or end falls back to the smallest or largest existing runner number.
+ */
+export function getTrackerRunnerNumbers(
+  runners: Pick<RunnerRow, 'runnerId'>[],
+  start: number | null,
+  end: number | null,
+): number[] {
+  const bounds = getRunnerNumberBounds(runners)
+  const first = start ?? bounds?.min
+  const last = end ?? bounds?.max
+  if (first === undefined || last === undefined) return []
+
+  return Array.from({ length: Math.max(0, last - first + 1) }, (_, index) => first + index)
+}
