@@ -1,0 +1,645 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dark theme should match snapshot 1`] = `
+<div
+  class="flex flex-col items-center h-full overflow-auto"
+>
+  <div
+    class="grid grid-cols-[min-content_auto_min-content] gap-y-2.5 w-full"
+  >
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      Kindergarten - Girls
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=4&name=Abraham+Lincoln&grade=K&gender=Girl&lapCount=5"
+    >
+      4
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=4&name=Abraham+Lincoln&grade=K&gender=Girl&lapCount=5"
+    >
+      Abraham Lincoln
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=4&name=Abraham+Lincoln&grade=K&gender=Girl&lapCount=5"
+    >
+      5
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      3rd Grade - Boys
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=3&name=Thomas+Jefferson&grade=3&gender=Boy&lapCount=7"
+    >
+      3
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=3&name=Thomas+Jefferson&grade=3&gender=Boy&lapCount=7"
+    >
+      Thomas Jefferson
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=3&name=Thomas+Jefferson&grade=3&gender=Boy&lapCount=7"
+    >
+      7
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      4th Grade - Boys
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=2&name=John+Adams&grade=4&gender=Boy&lapCount=7"
+    >
+      2
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=2&name=John+Adams&grade=4&gender=Boy&lapCount=7"
+    >
+      John Adams
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=2&name=John+Adams&grade=4&gender=Boy&lapCount=7"
+    >
+      7
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      5th Grade - Boys
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=1&name=George+Washington&grade=5&gender=Boy&lapCount=10"
+    >
+      1
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=1&name=George+Washington&grade=5&gender=Boy&lapCount=10"
+    >
+      George Washington
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=1&name=George+Washington&grade=5&gender=Boy&lapCount=10"
+    >
+      10
+       lap
+      s
+    </a>
+  </div>
+</div>
+`;
+
+exports[`dark theme should match snapshot with autoScroll 1`] = `
+<div
+  class="flex flex-col items-center h-full overflow-auto"
+>
+  <div
+    class="grid grid-cols-[min-content_auto_min-content] gap-y-2.5 w-full animate-auto-scroll"
+  >
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      Kindergarten - Girls
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=4&name=Abraham+Lincoln&grade=K&gender=Girl&lapCount=5"
+    >
+      4
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=4&name=Abraham+Lincoln&grade=K&gender=Girl&lapCount=5"
+    >
+      Abraham Lincoln
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=4&name=Abraham+Lincoln&grade=K&gender=Girl&lapCount=5"
+    >
+      5
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      3rd Grade - Boys
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=3&name=Thomas+Jefferson&grade=3&gender=Boy&lapCount=7"
+    >
+      3
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=3&name=Thomas+Jefferson&grade=3&gender=Boy&lapCount=7"
+    >
+      Thomas Jefferson
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=3&name=Thomas+Jefferson&grade=3&gender=Boy&lapCount=7"
+    >
+      7
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      4th Grade - Boys
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=2&name=John+Adams&grade=4&gender=Boy&lapCount=7"
+    >
+      2
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=2&name=John+Adams&grade=4&gender=Boy&lapCount=7"
+    >
+      John Adams
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=2&name=John+Adams&grade=4&gender=Boy&lapCount=7"
+    >
+      7
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      5th Grade - Boys
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=1&name=George+Washington&grade=5&gender=Boy&lapCount=10"
+    >
+      1
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=1&name=George+Washington&grade=5&gender=Boy&lapCount=10"
+    >
+      George Washington
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=1&name=George+Washington&grade=5&gender=Boy&lapCount=10"
+    >
+      10
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      Kindergarten - Girls
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=4&name=Abraham+Lincoln&grade=K&gender=Girl&lapCount=5"
+    >
+      4
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=4&name=Abraham+Lincoln&grade=K&gender=Girl&lapCount=5"
+    >
+      Abraham Lincoln
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=4&name=Abraham+Lincoln&grade=K&gender=Girl&lapCount=5"
+    >
+      5
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      3rd Grade - Boys
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=3&name=Thomas+Jefferson&grade=3&gender=Boy&lapCount=7"
+    >
+      3
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=3&name=Thomas+Jefferson&grade=3&gender=Boy&lapCount=7"
+    >
+      Thomas Jefferson
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=3&name=Thomas+Jefferson&grade=3&gender=Boy&lapCount=7"
+    >
+      7
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      4th Grade - Boys
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=2&name=John+Adams&grade=4&gender=Boy&lapCount=7"
+    >
+      2
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=2&name=John+Adams&grade=4&gender=Boy&lapCount=7"
+    >
+      John Adams
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=2&name=John+Adams&grade=4&gender=Boy&lapCount=7"
+    >
+      7
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      5th Grade - Boys
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=1&name=George+Washington&grade=5&gender=Boy&lapCount=10"
+    >
+      1
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=1&name=George+Washington&grade=5&gender=Boy&lapCount=10"
+    >
+      George Washington
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=1&name=George+Washington&grade=5&gender=Boy&lapCount=10"
+    >
+      10
+       lap
+      s
+    </a>
+  </div>
+</div>
+`;
+
+exports[`light theme should match snapshot 1`] = `
+<div
+  class="flex flex-col items-center h-full overflow-auto"
+>
+  <div
+    class="grid grid-cols-[min-content_auto_min-content] gap-y-2.5 w-full"
+  >
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      Kindergarten - Girls
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=4&name=Abraham+Lincoln&grade=K&gender=Girl&lapCount=5"
+    >
+      4
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=4&name=Abraham+Lincoln&grade=K&gender=Girl&lapCount=5"
+    >
+      Abraham Lincoln
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=4&name=Abraham+Lincoln&grade=K&gender=Girl&lapCount=5"
+    >
+      5
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      3rd Grade - Boys
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=3&name=Thomas+Jefferson&grade=3&gender=Boy&lapCount=7"
+    >
+      3
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=3&name=Thomas+Jefferson&grade=3&gender=Boy&lapCount=7"
+    >
+      Thomas Jefferson
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=3&name=Thomas+Jefferson&grade=3&gender=Boy&lapCount=7"
+    >
+      7
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      4th Grade - Boys
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=2&name=John+Adams&grade=4&gender=Boy&lapCount=7"
+    >
+      2
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=2&name=John+Adams&grade=4&gender=Boy&lapCount=7"
+    >
+      John Adams
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=2&name=John+Adams&grade=4&gender=Boy&lapCount=7"
+    >
+      7
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      5th Grade - Boys
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=1&name=George+Washington&grade=5&gender=Boy&lapCount=10"
+    >
+      1
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=1&name=George+Washington&grade=5&gender=Boy&lapCount=10"
+    >
+      George Washington
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=1&name=George+Washington&grade=5&gender=Boy&lapCount=10"
+    >
+      10
+       lap
+      s
+    </a>
+  </div>
+</div>
+`;
+
+exports[`light theme should match snapshot with autoScroll 1`] = `
+<div
+  class="flex flex-col items-center h-full overflow-auto"
+>
+  <div
+    class="grid grid-cols-[min-content_auto_min-content] gap-y-2.5 w-full animate-auto-scroll"
+  >
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      Kindergarten - Girls
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=4&name=Abraham+Lincoln&grade=K&gender=Girl&lapCount=5"
+    >
+      4
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=4&name=Abraham+Lincoln&grade=K&gender=Girl&lapCount=5"
+    >
+      Abraham Lincoln
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=4&name=Abraham+Lincoln&grade=K&gender=Girl&lapCount=5"
+    >
+      5
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      3rd Grade - Boys
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=3&name=Thomas+Jefferson&grade=3&gender=Boy&lapCount=7"
+    >
+      3
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=3&name=Thomas+Jefferson&grade=3&gender=Boy&lapCount=7"
+    >
+      Thomas Jefferson
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=3&name=Thomas+Jefferson&grade=3&gender=Boy&lapCount=7"
+    >
+      7
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      4th Grade - Boys
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=2&name=John+Adams&grade=4&gender=Boy&lapCount=7"
+    >
+      2
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=2&name=John+Adams&grade=4&gender=Boy&lapCount=7"
+    >
+      John Adams
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=2&name=John+Adams&grade=4&gender=Boy&lapCount=7"
+    >
+      7
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      5th Grade - Boys
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=1&name=George+Washington&grade=5&gender=Boy&lapCount=10"
+    >
+      1
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=1&name=George+Washington&grade=5&gender=Boy&lapCount=10"
+    >
+      George Washington
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=1&name=George+Washington&grade=5&gender=Boy&lapCount=10"
+    >
+      10
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      Kindergarten - Girls
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=4&name=Abraham+Lincoln&grade=K&gender=Girl&lapCount=5"
+    >
+      4
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=4&name=Abraham+Lincoln&grade=K&gender=Girl&lapCount=5"
+    >
+      Abraham Lincoln
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=4&name=Abraham+Lincoln&grade=K&gender=Girl&lapCount=5"
+    >
+      5
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      3rd Grade - Boys
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=3&name=Thomas+Jefferson&grade=3&gender=Boy&lapCount=7"
+    >
+      3
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=3&name=Thomas+Jefferson&grade=3&gender=Boy&lapCount=7"
+    >
+      Thomas Jefferson
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=3&name=Thomas+Jefferson&grade=3&gender=Boy&lapCount=7"
+    >
+      7
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      4th Grade - Boys
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=2&name=John+Adams&grade=4&gender=Boy&lapCount=7"
+    >
+      2
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=2&name=John+Adams&grade=4&gender=Boy&lapCount=7"
+    >
+      John Adams
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=2&name=John+Adams&grade=4&gender=Boy&lapCount=7"
+    >
+      7
+       lap
+      s
+    </a>
+    <div
+      class="col-span-3 text-tint font-bold py-1.5 px-5 mt-2 first:mt-0"
+    >
+      5th Grade - Boys
+    </div>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-l-sm"
+      href="/edit?runnerId=1&name=George+Washington&grade=5&gender=Boy&lapCount=10"
+    >
+      1
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5"
+      href="/edit?runnerId=1&name=George+Washington&grade=5&gender=Boy&lapCount=10"
+    >
+      George Washington
+    </a>
+    <a
+      class="bg-bg py-2.5 px-5 rounded-r-sm whitespace-nowrap"
+      href="/edit?runnerId=1&name=George+Washington&grade=5&gender=Boy&lapCount=10"
+    >
+      10
+       lap
+      s
+    </a>
+  </div>
+</div>
+`;

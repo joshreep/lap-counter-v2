@@ -1,5 +1,5 @@
 import { forEachTheme } from '@/test-utils/ThemeWrapper'
-import { render } from '@testing-library/react'
+import { act, render, waitFor } from '@testing-library/react'
 import SubmitAnimation, { SubmissionState } from './SubmitAnimation'
 
 type SetupProps = {
@@ -30,21 +30,42 @@ forEachTheme((theme) => {
       expect(container.firstChild).toBeNull()
     })
 
-    test('should render LoadingAnimation when submissionState is Pending', () => {
+    test('should render LoadingAnimation when submissionState is Pending', async () => {
       const { container, onAnimationFinishMock } = setup({
         submissionState: SubmissionState.Pending,
       })
       expect(onAnimationFinishMock).not.toHaveBeenCalled()
+
+      await act(async () => {
+        jest.runAllTimers()
+      })
+
+      await waitFor(() => {
+        expect(container.firstChild).not.toBeNull()
+      })
+
       expect(container.firstChild).toMatchSnapshot()
     })
 
-    test('should render CheckAnimation when submissionState is Complete', () => {
-      jest.mock('lottie-react')
+    test('should render CheckAnimation when submissionState is Complete', async () => {
       const { container, onAnimationFinishMock } = setup({
         submissionState: SubmissionState.Complete,
       })
+
+      await act(async () => {
+        jest.runAllTimers()
+      })
+
+      await waitFor(() => {
+        expect(container.firstChild).not.toBeNull()
+      })
+
       expect(container.firstChild).toMatchSnapshot()
-      jest.runAllTimers()
+
+      await act(async () => {
+        jest.runAllTimers()
+      })
+
       expect(onAnimationFinishMock).toHaveBeenCalled()
     })
   })

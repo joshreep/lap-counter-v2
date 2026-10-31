@@ -46,6 +46,119 @@ exports[`dark theme add mode should match snapshot 1`] = `
       />
     </div>
     <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="grade"
+      >
+        Grade
+      </label>
+      <select
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="gradeSelect"
+        id="grade"
+        required=""
+      >
+        <option
+          disabled=""
+          value=""
+        >
+          Select 
+          Grade
+        </option>
+        <option
+          value="Pre-K"
+        >
+          Pre-K
+        </option>
+        <option
+          value="K"
+        >
+          Kindergarten
+        </option>
+        <option
+          value="1"
+        >
+          1st Grade
+        </option>
+        <option
+          value="2"
+        >
+          2nd Grade
+        </option>
+        <option
+          value="3"
+        >
+          3rd Grade
+        </option>
+        <option
+          value="4"
+        >
+          4th Grade
+        </option>
+        <option
+          value="5"
+        >
+          5th Grade
+        </option>
+        <option
+          value="6"
+        >
+          6th Grade
+        </option>
+        <option
+          value="7"
+        >
+          7th Grade
+        </option>
+        <option
+          value="8"
+        >
+          8th Grade
+        </option>
+        <option
+          value="N/A"
+        >
+          N/A
+        </option>
+      </select>
+    </div>
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="gender"
+      >
+        Gender
+      </label>
+      <select
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="genderSelect"
+        id="gender"
+        required=""
+      >
+        <option
+          disabled=""
+          value=""
+        >
+          Select 
+          Gender
+        </option>
+        <option
+          value="Boy"
+        >
+          Boy
+        </option>
+        <option
+          value="Girl"
+        >
+          Girl
+        </option>
+      </select>
+    </div>
+    <div
       class="flex justify-between gap-5 flex-row-reverse"
     >
       <button
@@ -103,6 +216,119 @@ exports[`dark theme edit mode should match snapshot 1`] = `
         id="name"
         value=""
       />
+    </div>
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="grade"
+      >
+        Grade
+      </label>
+      <select
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="gradeSelect"
+        id="grade"
+        required=""
+      >
+        <option
+          disabled=""
+          value=""
+        >
+          Select 
+          Grade
+        </option>
+        <option
+          value="Pre-K"
+        >
+          Pre-K
+        </option>
+        <option
+          value="K"
+        >
+          Kindergarten
+        </option>
+        <option
+          value="1"
+        >
+          1st Grade
+        </option>
+        <option
+          value="2"
+        >
+          2nd Grade
+        </option>
+        <option
+          value="3"
+        >
+          3rd Grade
+        </option>
+        <option
+          value="4"
+        >
+          4th Grade
+        </option>
+        <option
+          value="5"
+        >
+          5th Grade
+        </option>
+        <option
+          value="6"
+        >
+          6th Grade
+        </option>
+        <option
+          value="7"
+        >
+          7th Grade
+        </option>
+        <option
+          value="8"
+        >
+          8th Grade
+        </option>
+        <option
+          value="N/A"
+        >
+          N/A
+        </option>
+      </select>
+    </div>
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="gender"
+      >
+        Gender
+      </label>
+      <select
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="genderSelect"
+        id="gender"
+        required=""
+      >
+        <option
+          disabled=""
+          value=""
+        >
+          Select 
+          Gender
+        </option>
+        <option
+          value="Boy"
+        >
+          Boy
+        </option>
+        <option
+          value="Girl"
+        >
+          Girl
+        </option>
+      </select>
     </div>
     <div
       class="flex flex-col gap-1"
@@ -188,6 +414,119 @@ exports[`light theme add mode should match snapshot 1`] = `
       />
     </div>
     <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="grade"
+      >
+        Grade
+      </label>
+      <select
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="gradeSelect"
+        id="grade"
+        required=""
+      >
+        <option
+          disabled=""
+          value=""
+        >
+          Select 
+          Grade
+        </option>
+        <option
+          value="Pre-K"
+        >
+          Pre-K
+        </option>
+        <option
+          value="K"
+        >
+          Kindergarten
+        </option>
+        <option
+          value="1"
+        >
+          1st Grade
+        </option>
+        <option
+          value="2"
+        >
+          2nd Grade
+        </option>
+        <option
+          value="3"
+        >
+          3rd Grade
+        </option>
+        <option
+          value="4"
+        >
+          4th Grade
+        </option>
+        <option
+          value="5"
+        >
+          5th Grade
+        </option>
+        <option
+          value="6"
+        >
+          6th Grade
+        </option>
+        <option
+          value="7"
+        >
+          7th Grade
+        </option>
+        <option
+          value="8"
+        >
+          8th Grade
+        </option>
+        <option
+          value="N/A"
+        >
+          N/A
+        </option>
+      </select>
+    </div>
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="gender"
+      >
+        Gender
+      </label>
+      <select
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="genderSelect"
+        id="gender"
+        required=""
+      >
+        <option
+          disabled=""
+          value=""
+        >
+          Select 
+          Gender
+        </option>
+        <option
+          value="Boy"
+        >
+          Boy
+        </option>
+        <option
+          value="Girl"
+        >
+          Girl
+        </option>
+      </select>
+    </div>
+    <div
       class="flex justify-between gap-5 flex-row-reverse"
     >
       <button
@@ -245,6 +584,119 @@ exports[`light theme edit mode should match snapshot 1`] = `
         id="name"
         value=""
       />
+    </div>
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="grade"
+      >
+        Grade
+      </label>
+      <select
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="gradeSelect"
+        id="grade"
+        required=""
+      >
+        <option
+          disabled=""
+          value=""
+        >
+          Select 
+          Grade
+        </option>
+        <option
+          value="Pre-K"
+        >
+          Pre-K
+        </option>
+        <option
+          value="K"
+        >
+          Kindergarten
+        </option>
+        <option
+          value="1"
+        >
+          1st Grade
+        </option>
+        <option
+          value="2"
+        >
+          2nd Grade
+        </option>
+        <option
+          value="3"
+        >
+          3rd Grade
+        </option>
+        <option
+          value="4"
+        >
+          4th Grade
+        </option>
+        <option
+          value="5"
+        >
+          5th Grade
+        </option>
+        <option
+          value="6"
+        >
+          6th Grade
+        </option>
+        <option
+          value="7"
+        >
+          7th Grade
+        </option>
+        <option
+          value="8"
+        >
+          8th Grade
+        </option>
+        <option
+          value="N/A"
+        >
+          N/A
+        </option>
+      </select>
+    </div>
+    <div
+      class="flex flex-col gap-1"
+    >
+      <label
+        class="p-0  ml-1.5"
+        for="gender"
+      >
+        Gender
+      </label>
+      <select
+        class="w-full p-4 border-solid bg-input-bg rounded-md"
+        data-testid="genderSelect"
+        id="gender"
+        required=""
+      >
+        <option
+          disabled=""
+          value=""
+        >
+          Select 
+          Gender
+        </option>
+        <option
+          value="Boy"
+        >
+          Boy
+        </option>
+        <option
+          value="Girl"
+        >
+          Girl
+        </option>
+      </select>
     </div>
     <div
       class="flex flex-col gap-1"

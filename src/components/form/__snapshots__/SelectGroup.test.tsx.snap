@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dark theme should match snapshot 1`] = `
+<div
+  class="flex flex-col gap-1"
+>
+  <label
+    class="p-0  ml-1.5"
+    for="test"
+  >
+    Test Label
+  </label>
+  <select
+    class="w-full p-4 border-solid bg-input-bg rounded-md"
+    id="test"
+  >
+    <option
+      disabled=""
+      value=""
+    >
+      Select 
+      Test Label
+    </option>
+    <option
+      value="a"
+    >
+      Option A
+    </option>
+    <option
+      value="b"
+    >
+      Option B
+    </option>
+    <option
+      value="c"
+    >
+      Option C
+    </option>
+  </select>
+</div>
+`;
+
+exports[`light theme should match snapshot 1`] = `
+<div
+  class="flex flex-col gap-1"
+>
+  <label
+    class="p-0  ml-1.5"
+    for="test"
+  >
+    Test Label
+  </label>
+  <select
+    class="w-full p-4 border-solid bg-input-bg rounded-md"
+    id="test"
+  >
+    <option
+      disabled=""
+      value=""
+    >
+      Select 
+      Test Label
+    </option>
+    <option
+      value="a"
+    >
+      Option A
+    </option>
+    <option
+      value="b"
+    >
+      Option B
+    </option>
+    <option
+      value="c"
+    >
+      Option C
+    </option>
+  </select>
+</div>
+`;
